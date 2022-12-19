@@ -3,6 +3,7 @@ package com.hanif.tikfollow;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -31,9 +32,11 @@ public class login extends AppCompatActivity {
                 }else {
                     if (input.startsWith("@")){
                         autoLoad.savedata(input,500);
+                        save(input);
                     }else {
                         input= "@"+input;
                         autoLoad.savedata(input,500);
+                        save(input);
                     }
 
                 }
@@ -51,6 +54,13 @@ public class login extends AppCompatActivity {
                 startActivity(myIntent);
             }
         });
+    }
+
+
+    public void save(String userName){
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString("name", userName);
     }
 
 

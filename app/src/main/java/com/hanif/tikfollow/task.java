@@ -4,11 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Switch;
 import android.widget.TextView;
+
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
 
 public class task extends AppCompatActivity implements View.OnClickListener {
     public Intent myIntent;
@@ -31,7 +36,6 @@ public class task extends AppCompatActivity implements View.OnClickListener {
 
 
 
-
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -48,8 +52,27 @@ public class task extends AppCompatActivity implements View.OnClickListener {
                 startActivity(myIntent);
             case R.id.follow:
 
+
         }
     }
+
+
+
+
+
+
+    public void savedata(){
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
+
+        SharedPreferences.Editor editor = pref.edit();
+
+    }
+
+
+
+
+
+
 
 
 

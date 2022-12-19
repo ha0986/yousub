@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -14,6 +15,7 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
 
     public Intent myIntent;
     TextView points;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +41,7 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
         exit.setOnClickListener(this);
         bonus.setOnClickListener(this);
 
-
+        username.setText(autoLoad.userName);
     }
 
 
@@ -78,5 +80,6 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
         }
 
     }
+
 
 }

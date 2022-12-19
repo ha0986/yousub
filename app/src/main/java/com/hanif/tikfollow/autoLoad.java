@@ -31,11 +31,14 @@ import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 
 
 
+
 public class autoLoad {
+    public static String userName;
     private static RewardedAd mRewardedAd;
     private static AdView adView;
     private static InterstitialAd mInterstitialAd;
     public  static boolean connection = false;
+
 
 
 

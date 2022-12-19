@@ -3,9 +3,11 @@ package com.hanif.tikfollow;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 
 public class splash extends AppCompatActivity {
 
@@ -14,13 +16,17 @@ public class splash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        final Handler handler = new Handler(Looper.getMainLooper());
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent myIntent = new Intent(splash.this, profile.class);
-                startActivity(myIntent);
-            }
-        }, 1000);
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
+        String username = pref.getString("name", null);
+        autoLoad.userName = username;
+        if (username==""){
+            Intent myIntent = new Intent(splash.this, login.class);
+            startActivity(myIntent);
+        }else {
+            Intent myIntent = new Intent(splash.this, profile.class);
+            startActivity(myIntent);
+        }
+
     }
+
 }
