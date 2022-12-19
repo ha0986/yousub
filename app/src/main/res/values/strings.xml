@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">tikfollow</string>
+    <string name="a">t</string>
+    <string name="closes">t</string>
+    <string name="ap">ti</string>
+    <string name="app">tik</string>
+    <string name="app_">tikf</string>
+    <string name="app_n">tikfo</string>
+    <string name="app_na">tikfol</string>
+    <string name="app_nam">tikfoll</string>
+    <string name="app_names">tikfollo</string>
+    <string name="app_namesz">tikfollow</string>
+    <string name="app_namesx">tikfollows</string>
+    <string name="text">\@username</string>
+    <string name="points">00000</string>
+    <string name="textview">Fetching Jokes for you</string>
+    <string name="splash">Claim likes and followers</string>
+    <string name="continue_as_guest">Continue As Guest</string>
+    <string name="hint">hint</string>
+    <string name="enter_your_tiktok_username">Enter your Tiktok Username</string>
+    <string name="type_here">Type here</string>
+    <string name="done">Done</string>
+</resources>
