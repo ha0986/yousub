@@ -129,4 +129,19 @@
         app:layout_constraintVertical_bias="0.14"
         app:srcCompat="@drawable/avater" />
 
+    <TextView
+        android:id="@+id/points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0000"
+        android:textColor="#E91E63"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.456"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.387" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

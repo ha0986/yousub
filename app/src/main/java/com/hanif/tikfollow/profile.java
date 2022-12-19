@@ -8,10 +8,12 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class profile extends AppCompatActivity implements View.OnClickListener {
 
     public Intent myIntent;
+    TextView points;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,8 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
         Button more = findViewById(R.id.more);
         Button exit = findViewById(R.id.exit);
         Button bonus = findViewById(R.id.bonus);
+        points = findViewById(R.id.points);
+        TextView username = findViewById(R.id.userName);
 
 
         rate.setOnClickListener(this);
@@ -49,8 +53,9 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
                 startActivity(browserIntent);
                 break;
             case R.id.edit:
-                myIntent = new Intent(profile.this, login.class);
-                startActivity(myIntent);
+                Intent i = new Intent(profile.this, login.class);
+                i.putExtra("change","true");
+                startActivity(i);
                 break;
             case R.id.task:
                 myIntent = new Intent(profile.this, task.class);

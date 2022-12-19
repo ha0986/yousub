@@ -37,18 +37,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.238">
 
-        <com.google.android.material.textfield.TextInputLayout
+        <EditText
+            android:id="@+id/editTextTextPersonName3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:boxBackgroundColor="#00FFFFFF">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#00FFFFFF"
-                android:hint="@string/type_here"
-                android:textColor="#090000" />
-        </com.google.android.material.textfield.TextInputLayout>
+            android:layout_height="match_parent"
+            android:ems="10"
+            android:hint="@string/type_here"
+            android:inputType="textPersonName"
+            android:textAlignment="center" />
     </androidx.cardview.widget.CardView>
 
     <Button

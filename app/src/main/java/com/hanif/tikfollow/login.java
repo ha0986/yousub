@@ -4,12 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
-import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 
 public class login extends AppCompatActivity {
     @Override
@@ -18,13 +16,29 @@ public class login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         Button done = findViewById(R.id.done);
         Button gues = findViewById(R.id.gp);
+        EditText text = findViewById(R.id.editTextTextPersonName3);
+        String check = getIntent().getStringExtra("change");
+
+
 
 
         done.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(1==1){
 
+            public String input = text.getText().toString();
+            public void onClick(View v) {
+                if(input.isEmpty()){
+                    autoLoad.alart(login.this, "Please enter your Username");
+                }else {
+                    if (input.startsWith("@")){
+                        autoLoad.savedata(input,500);
+                    }else {
+                        input= "@"+input;
+                        autoLoad.savedata(input,500);
+                    }
+
+                }
+                if (check == "change") {
+                    autoLoad.removedata();
                 }
             }
         });
