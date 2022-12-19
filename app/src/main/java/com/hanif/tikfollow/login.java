@@ -23,20 +23,21 @@ public class login extends AppCompatActivity {
 
 
 
-        done.setOnClickListener(new View.OnClickListener() {
 
-            public String input = text.getText().toString();
+        done.setOnClickListener(new View.OnClickListener() {
+            @Override
             public void onClick(View v) {
-                if(input.isEmpty()){
+                String inputs = text.getText().toString();
+                if(inputs.isEmpty()){
                     autoLoad.alart(login.this, "Please enter your Username");
-                }else {
-                    if (input.startsWith("@")){
-                        autoLoad.savedata(input,500);
-                        save(input);
+                }else{
+                    if (inputs.startsWith("@")){
+                        autoLoad.savedata(inputs,500);
+                        save(inputs);
                     }else {
-                        input= "@"+input;
-                        autoLoad.savedata(input,500);
-                        save(input);
+                        inputs= "@"+inputs;
+                        autoLoad.savedata(inputs,500);
+                        save(inputs);
                     }
 
                 }
@@ -58,9 +59,17 @@ public class login extends AppCompatActivity {
 
 
     public void save(String userName){
+        autoLoad.userName = userName;
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
         SharedPreferences.Editor editor = pref.edit();
         editor.putString("name", userName);
+        editor.apply();
+        changeScene();
+    }
+
+    public void changeScene(){
+        Intent myIntent = new Intent(login.this, profile.class);
+        startActivity(myIntent);
     }
 
 

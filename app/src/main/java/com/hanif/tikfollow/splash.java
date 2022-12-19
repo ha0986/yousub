@@ -16,16 +16,27 @@ public class splash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
-        String username = pref.getString("name", null);
-        autoLoad.userName = username;
-        if (username==""){
-            Intent myIntent = new Intent(splash.this, login.class);
-            startActivity(myIntent);
-        }else {
-            Intent myIntent = new Intent(splash.this, profile.class);
-            startActivity(myIntent);
-        }
+
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                // Write whatever to want to do after delay specified (1 sec)
+                Log.d("Handler", "Running Handler");
+                SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
+                String username = pref.getString("name", "");
+                autoLoad.userName = username;
+                Log.d("name", username);
+                if (username==""){
+                    Intent myIntent = new Intent(splash.this, login.class);
+                    startActivity(myIntent);
+                }else {
+                    Intent myIntent = new Intent(splash.this, profile.class);
+                    startActivity(myIntent);
+                }
+            }
+        }, 1000);
+
 
     }
 
