@@ -5,10 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import java.util.Objects;
 
 public class login extends AppCompatActivity {
     @Override
@@ -24,36 +24,31 @@ public class login extends AppCompatActivity {
 
 
 
-        done.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String inputs = text.getText().toString();
-                if(inputs.isEmpty()){
-                    autoLoad.alart(login.this, "Please enter your Username");
-                }else{
-                    if (inputs.startsWith("@")){
-                        autoLoad.savedata(inputs,500);
-                        save(inputs);
-                    }else {
-                        inputs= "@"+inputs;
-                        autoLoad.savedata(inputs,500);
-                        save(inputs);
-                    }
+        done.setOnClickListener(v -> {
+            String inputs = text.getText().toString();
+            if(inputs.isEmpty()){
+                autoLoad.alart(login.this, "Please enter your Username");
+            }else{
+                if (Objects.equals(check, "true")) {
+                    autoLoad.removedata(autoLoad.userName);
+                }
+                if (inputs.startsWith("@")){
+                    autoLoad.savedata(inputs);
+                    save(inputs);
+                }else {
+                    inputs= "@"+inputs;
+                    autoLoad.savedata(inputs);
+                    save(inputs);
+                }
 
-                }
-                if (check == "change") {
-                    autoLoad.removedata();
-                }
             }
+
         });
 
 
-        gues.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent myIntent = new Intent(login.this, profile.class);
-                startActivity(myIntent);
-            }
+        gues.setOnClickListener(v -> {
+            Intent myIntent = new Intent(login.this, profile.class);
+            startActivity(myIntent);
         });
     }
 

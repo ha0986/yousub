@@ -28,8 +28,11 @@ import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
 import com.google.android.gms.ads.rewarded.RewardedAd;
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
-
-
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class autoLoad {
@@ -38,6 +41,9 @@ public class autoLoad {
     private static AdView adView;
     private static InterstitialAd mInterstitialAd;
     public  static boolean connection = false;
+    public static String points = "500";
+    public static FirebaseDatabase database = FirebaseDatabase.getInstance();
+
 
 
 
@@ -232,13 +238,29 @@ public class autoLoad {
 
     public static void getdata(){
 
+        DatabaseReference myRef = database.getReference("tikfan");
+
+        myRef.child(userName).get().addOnCompleteListener(task -> {
+            if (!task.isSuccessful()) {
+                Log.e("firebase", "Error getting data", task.getException());
+            }
+            else {
+                points = String.valueOf(task.getResult().getValue());
+                profile.points.setText(points);
+            }
+        });
     }
 
-    public static void savedata(String userName, Integer points){
 
+    public static void savedata(String userName){
+        DatabaseReference myRef = database.getReference("tikfan");
+        myRef.child(userName).setValue(Integer.valueOf(points));
     }
 
-    public static void removedata(){
+
+    public static void removedata(String userName){
+        DatabaseReference myRef = database.getReference("tikfan");
+        myRef.child(userName).removeValue();
 
     }
 

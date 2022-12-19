@@ -14,7 +14,7 @@ import android.widget.TextView;
 public class profile extends AppCompatActivity implements View.OnClickListener {
 
     public Intent myIntent;
-    TextView points;
+    public static TextView points;
 
 
     @Override
@@ -42,6 +42,7 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
         bonus.setOnClickListener(this);
 
         username.setText(autoLoad.userName);
+        autoLoad.getdata();
     }
 
 

@@ -18,24 +18,18 @@ public class splash extends AppCompatActivity {
 
 
         final Handler handler = new Handler();
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                // Write whatever to want to do after delay specified (1 sec)
-                Log.d("Handler", "Running Handler");
-                SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
-                String username = pref.getString("name", "");
+        handler.postDelayed(() -> {
+            SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
+            String username = pref.getString("name", "");
+            if (username==""){
+                Intent myIntent = new Intent(splash.this, login.class);
+                startActivity(myIntent);
+            }else {
                 autoLoad.userName = username;
-                Log.d("name", username);
-                if (username==""){
-                    Intent myIntent = new Intent(splash.this, login.class);
-                    startActivity(myIntent);
-                }else {
-                    Intent myIntent = new Intent(splash.this, profile.class);
-                    startActivity(myIntent);
-                }
+                Intent myIntent = new Intent(splash.this, profile.class);
+                startActivity(myIntent);
             }
-        }, 1000);
+        }, 2000);
 
 
     }
