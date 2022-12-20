@@ -29,6 +29,7 @@
                 android:layout_width="6dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:contentDescription="@string/app_nam"
                 app:srcCompat="@drawable/clock" />
 
             <Button
@@ -49,14 +50,15 @@
                 android:background="#00FFFFFF" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/button8"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Claimed"
                 android:textStyle="bold"
                 app:backgroundTint="#E91E63"
-                app:cornerRadius="60dp" />
+                app:cornerRadius="60dp"
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
             <View
                 android:id="@+id/divider2"
@@ -110,7 +112,7 @@
                 android:background="#00FFFFFF" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/button7"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -171,14 +173,15 @@
                 android:background="#00FFFFFF" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/button6"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Claim"
                 android:textStyle="bold"
                 app:backgroundTint="#E91E63"
-                app:cornerRadius="60dp" />
+                app:cornerRadius="60dp"
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
             <View
                 android:id="@+id/divider2"
@@ -222,7 +225,8 @@
                 android:text="+1 Follow"
                 android:textColor="#000000"
                 android:textStyle="bold"
-                app:cornerRadius="10dp" />
+                app:cornerRadius="10dp"
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
             <View
                 android:id="@+id/divider"
@@ -232,7 +236,7 @@
                 android:background="#00FFFFFF" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/button5"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -293,7 +297,7 @@
                 android:background="#00FFFFFF" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/button4"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -354,7 +358,7 @@
                 android:background="#00FFFFFF" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/button3"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
