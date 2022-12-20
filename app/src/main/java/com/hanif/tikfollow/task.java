@@ -1,27 +1,16 @@
 package com.hanif.tikfollow;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Switch;
 import android.widget.TextView;
 
-import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.gson.Gson;
+import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.ArrayList;
+import java.lang.reflect.Array;
 
 public class task extends AppCompatActivity implements View.OnClickListener {
     public Intent myIntent;
@@ -29,6 +18,7 @@ public class task extends AppCompatActivity implements View.OnClickListener {
     public String minusUser;
     public Integer minusPoint;
     public Integer plusPoints;
+    public static Array users;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +35,7 @@ public class task extends AppCompatActivity implements View.OnClickListener {
         follow.setOnClickListener(this);
 
 
-        autoLoad.getkeys();
+
 
     }
 

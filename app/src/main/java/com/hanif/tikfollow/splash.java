@@ -16,7 +16,10 @@ public class splash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+        move();
+    }
 
+    public void move(){
         final Handler handler = new Handler();
         handler.postDelayed(() -> {
             SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
@@ -30,8 +33,6 @@ public class splash extends AppCompatActivity {
                 startActivity(myIntent);
             }
         }, 2000);
-
-
     }
 
 }

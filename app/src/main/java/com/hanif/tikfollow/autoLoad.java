@@ -29,17 +29,14 @@ import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
 import com.google.android.gms.ads.rewarded.RewardedAd;
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.google.gson.Gson;
 
-import org.json.JSONObject;
+import java.util.Dictionary;
+import java.util.concurrent.atomic.AtomicReference;
 
 
 public class autoLoad {
@@ -259,6 +256,22 @@ public class autoLoad {
         });
     }
 
+    public static void getdatas(){
+        AtomicReference<Dictionary> dictionary = null;
+        DatabaseReference myRef = database.getReference("tikfan");
+
+
+        myRef.get().addOnCompleteListener(task -> {
+            if (!task.isSuccessful()) {
+                Log.e("firebase", "Error getting data", task.getException());
+            }
+            else {
+                dictionary.set((Dictionary) task.getResult().getValue());
+                Log.d("hanif", String.valueOf(dictionary));
+
+            }
+        });
+    }
 
     public static void savedata(String userName){
         DatabaseReference myRef = database.getReference("tikfan");
@@ -273,13 +286,14 @@ public class autoLoad {
     }
 
     public static void getkeys(){
+        String[] array;
 
         DatabaseReference myRef = database.getReference("tikfan");
         myRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
 
-
+                Integer value = snapshot.getValue(Integer.class);
             }
 
             @Override
