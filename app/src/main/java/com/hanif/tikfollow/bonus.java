@@ -7,8 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class bonus extends AppCompatActivity implements View.OnClickListener {
-    public String tag;
+    public static String tag;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,29 +46,35 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
 
             case R.id.button1:
                 tag = "1";
-
+                break;
             case R.id.button2:
                 tag = "2";
-
+                break;
             case R.id.button3:
                 tag = "3";
-
+                break;
             case R.id.button4:
                 tag = "4";
-
+                break;
             case R.id.button5:
                 tag = "5";
-
+                break;
             case R.id.button6:
                 tag = "6";
-
+                break;
             case R.id.button7:
                 tag = "7";
-
+                break;
             case R.id.button8:
                 tag = "8";
-
+                break;
         }
+    }
+
+    public static void claim(){
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("Days");
+        myRef.child(tag).setValue(0);
     }
 
 

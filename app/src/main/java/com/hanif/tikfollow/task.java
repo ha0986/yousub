@@ -15,6 +15,7 @@ import java.lang.reflect.Array;
 public class task extends AppCompatActivity implements View.OnClickListener {
     public Intent myIntent;
     TextView userpoints;
+    public Array array;
     public String minusUser;
     public Integer minusPoint;
     public Integer plusPoints;
@@ -45,15 +46,17 @@ public class task extends AppCompatActivity implements View.OnClickListener {
         switch (v.getId()){
             case R.id.reward200:
                 autoLoad.loadReward(task.this);
+                break;
             case  R.id.jokes:
                 myIntent = new Intent(task.this, jokes.class);
                 startActivity(myIntent);
+                break;
             case R.id.back:
                 myIntent = new Intent(task.this, profile.class);
                 startActivity(myIntent);
+                break;
             case R.id.follow:
-
-
+                break;
         }
     }
 
