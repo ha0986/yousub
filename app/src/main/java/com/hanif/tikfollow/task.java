@@ -18,6 +18,10 @@ import java.util.ArrayList;
 public class task extends AppCompatActivity implements View.OnClickListener {
     public Intent myIntent;
     TextView userpoints;
+    public String minusUser;
+    public Integer minusPoint;
+    public Integer plusPoints;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

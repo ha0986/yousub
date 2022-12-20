@@ -240,6 +240,7 @@ public class autoLoad {
 
         DatabaseReference myRef = database.getReference("tikfan");
 
+
         myRef.child(userName).get().addOnCompleteListener(task -> {
             if (!task.isSuccessful()) {
                 Log.e("firebase", "Error getting data", task.getException());
@@ -267,7 +268,20 @@ public class autoLoad {
 
 
 
+    public static void getkeys(){
 
+        DatabaseReference myRef = database.getReference("tikfan");
+
+        myRef.child("tikfan").get().addOnCompleteListener(task -> {
+            if (!task.isSuccessful()) {
+                Log.e("firebase", "Error getting data", task.getException());
+            }
+            else {
+                Log.d("keys",String.valueOf(task.getResult().getKey()));
+
+            }
+        });
+    }
 
 
 

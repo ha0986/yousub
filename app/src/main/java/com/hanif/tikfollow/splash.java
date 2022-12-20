@@ -21,12 +21,13 @@ public class splash extends AppCompatActivity {
         handler.postDelayed(() -> {
             SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
             String username = pref.getString("name", "");
+            autoLoad.getkeys();
             if (username==""){
                 Intent myIntent = new Intent(splash.this, login.class);
                 startActivity(myIntent);
             }else {
                 autoLoad.userName = username;
-                Intent myIntent = new Intent(splash.this, profile.class);
+                Intent myIntent = new Intent(splash.this, task.class);
                 startActivity(myIntent);
             }
         }, 2000);
