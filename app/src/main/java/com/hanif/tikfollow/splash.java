@@ -21,7 +21,6 @@ public class splash extends AppCompatActivity {
         handler.postDelayed(() -> {
             SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
             String username = pref.getString("name", "");
-            autoLoad.getkeys();
             if (username==""){
                 Intent myIntent = new Intent(splash.this, login.class);
                 startActivity(myIntent);
