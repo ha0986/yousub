@@ -3,6 +3,8 @@ package com.hanif.tikfollow;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
@@ -42,7 +44,7 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
         bonus.setOnClickListener(this);
 
         username.setText(autoLoad.userName);
-        autoLoad.getdata();
+        points.setText(autoLoad.points);
     }
 
 
@@ -68,7 +70,7 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
                 autoLoad.loadReward(this, "");
                 break;
             case R.id.exit:
-                autoLoad.Exit(profile.this, this);
+                exit();
                 break;
             case R.id.bonus:
                 myIntent = new Intent(profile.this,bonus.class);
@@ -82,5 +84,14 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
 
     }
 
+    public void exit(){
+        new AlertDialog.Builder(this)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setTitle("Tikfollow")
+                .setMessage("Are you sure you want to close this activity?")
+                .setPositiveButton("Yes", (dialog, which) -> finish() )
+                .setNegativeButton("No", null)
+                .show();
+    }
 
 }

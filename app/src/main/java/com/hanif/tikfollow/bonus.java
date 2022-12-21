@@ -12,11 +12,10 @@ import android.widget.Button;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
-import kotlin.collections.IntIterator;
 
 public class bonus extends AppCompatActivity implements View.OnClickListener {
     public static String tag;
@@ -83,12 +82,14 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
                 tag = "8";
                 break;
         }
+        check();
     }
 
 
     public void getDatas(){
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
         next = Integer.valueOf(pref.getString("next", "1"));
+        claimedDate= pref.getString("date", "1");
     }
 
 
@@ -96,10 +97,8 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
 
 
     public void check(){
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
-        Date date = new Date();
-        Log.d("hanif", String.valueOf(date));
-        if(String.valueOf(date).equals(claimedDate)){
+        String date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+        if(date.equals(claimedDate)){
             autoLoad.alart(this,"You can't Claim this offer now");
         }else if(Integer.valueOf(tag).equals(next)){
             autoLoad.alart(this,"You can't Claim this offer now");
@@ -108,13 +107,13 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
             SharedPreferences.Editor editor = pref.edit();
             next = Integer.parseInt(tag)+1;
 
-            editor.putString("date", String.valueOf(date));
+            editor.putString("date", date);
             editor.putString("next", String.valueOf(next));
-
-
 
             editor.apply();
             claim();
+            autoLoad.alart(this,"You will get your offer within a day");
+
         }
 
 
@@ -125,6 +124,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Days");
         myRef.child(tag).setValue(0);
+
     }
 
 

@@ -6,8 +6,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Looper;
-import android.util.Log;
+
+import java.util.Objects;
 
 public class splash extends AppCompatActivity {
 
@@ -17,6 +17,7 @@ public class splash extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         move();
+        autoLoad.loadAdd(this);
     }
 
     public void move(){
@@ -24,11 +25,13 @@ public class splash extends AppCompatActivity {
         handler.postDelayed(() -> {
             SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
             String username = pref.getString("name", "");
-            if (username==""){
+            if (Objects.equals(username, "")){
                 Intent myIntent = new Intent(splash.this, login.class);
                 startActivity(myIntent);
             }else {
+
                 autoLoad.userName = username;
+                autoLoad.getdata();
                 Intent myIntent = new Intent(splash.this, task.class);
                 startActivity(myIntent);
             }

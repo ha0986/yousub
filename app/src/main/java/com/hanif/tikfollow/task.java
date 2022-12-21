@@ -14,12 +14,13 @@ import java.lang.reflect.Array;
 
 public class task extends AppCompatActivity implements View.OnClickListener {
     public Intent myIntent;
-    TextView userpoints;
+    public static TextView userpoints;
     public Array array;
     public String minusUser;
     public Integer minusPoint;
     public Integer plusPoints;
     public static Array users;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,16 +29,20 @@ public class task extends AppCompatActivity implements View.OnClickListener {
         Button back = findViewById(R.id.back);
         Button jokes = findViewById(R.id.jokes);
         Button follow = findViewById(R.id.follow);
+        Button bonus = findViewById(R.id.bonusbtn);
         userpoints = findViewById(R.id.taskpoint);
 
+
+        userpoints.setText(autoLoad.points);
         reward.setOnClickListener(this);
         back.setOnClickListener(this);
         jokes.setOnClickListener(this);
         follow.setOnClickListener(this);
+        bonus.setOnClickListener(this);
 
 
 
-
+        autoLoad.getdatas();
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -51,11 +56,16 @@ public class task extends AppCompatActivity implements View.OnClickListener {
                 myIntent = new Intent(task.this, jokes.class);
                 startActivity(myIntent);
                 break;
+            case  R.id.bonusbtn:
+                myIntent = new Intent(task.this, bonus.class);
+                startActivity(myIntent);
+                break;
             case R.id.back:
                 myIntent = new Intent(task.this, profile.class);
                 startActivity(myIntent);
                 break;
             case R.id.follow:
+                startTask();
                 break;
         }
     }
@@ -73,7 +83,9 @@ public class task extends AppCompatActivity implements View.OnClickListener {
     }
 
 
+    public void startTask(){
 
+    }
 
 
 

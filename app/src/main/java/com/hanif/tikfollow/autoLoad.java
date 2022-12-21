@@ -36,6 +36,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Dictionary;
+import java.util.Objects;
 import java.util.concurrent.atomic.AtomicReference;
 
 
@@ -95,16 +96,7 @@ public class autoLoad {
    }
 
 
-    public static void Exit(Context context,Activity activity) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle(R.string.app_name);
-        builder.setMessage("Do you want to exit?")
-                .setCancelable(false)
-                .setPositiveButton("Yes", (dialog, id) -> activity.finish())
-                .setNegativeButton("No", (dialog, id) -> dialog.cancel());
-        AlertDialog alert = builder.create();
-        alert.show();
-    }
+
 
 
     public static void taskComplated(Context context,Activity activity) {
@@ -158,7 +150,7 @@ public class autoLoad {
     public static void loadBanner(Context context, String gravity){
         LinearLayout layout = new LinearLayout(context);
         layout.setOrientation(LinearLayout.VERTICAL);
-        if (gravity == "top"){
+        if (Objects.equals(gravity, "top")){
             layout.setGravity(Gravity.TOP);
         }else{
             layout.setGravity(Gravity.BOTTOM);
@@ -256,7 +248,8 @@ public class autoLoad {
             }
             else {
                 points = String.valueOf(task.getResult().getValue());
-                profile.points.setText(points);
+
+
             }
         });
     }
@@ -271,8 +264,8 @@ public class autoLoad {
                 Log.e("firebase", "Error getting data", task.getException());
             }
             else {
-                dictionary.set((Dictionary) task.getResult().getValue());
-                Log.d("hanif", String.valueOf(dictionary));
+                String dict= String.valueOf(task.getResult().getValue());
+                Log.d("hanif", dict);
 
             }
         });
