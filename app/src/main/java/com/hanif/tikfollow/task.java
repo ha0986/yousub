@@ -3,6 +3,7 @@ package com.hanif.tikfollow;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -42,7 +43,7 @@ public class task extends AppCompatActivity implements View.OnClickListener {
 
 
 
-        autoLoad.getdatas();
+       autoLoad.getDatas();
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -74,17 +75,18 @@ public class task extends AppCompatActivity implements View.OnClickListener {
 
 
 
-
     public void savedata(){
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
-
         SharedPreferences.Editor editor = pref.edit();
 
     }
 
 
     public void startTask(){
-
+        plusPoints = plusPoints+100;
+        minusPoint = minusPoint-100;
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.tiktok.com/"+ minusUser));
+        startActivity(intent);
     }
 
 

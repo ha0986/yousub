@@ -254,8 +254,7 @@ public class autoLoad {
         });
     }
 
-    public static void getdatas(){
-        AtomicReference<Dictionary> dictionary = null;
+    public static void getDatas(){
         DatabaseReference myRef = database.getReference("tikfan");
 
 
@@ -265,6 +264,7 @@ public class autoLoad {
             }
             else {
                 String dict= String.valueOf(task.getResult().getValue());
+
                 Log.d("hanif", dict);
 
             }
@@ -283,38 +283,6 @@ public class autoLoad {
 
     }
 
-    public static void getkeys(){
-        String[] array;
-
-        DatabaseReference myRef = database.getReference("tikfan");
-        myRef.addChildEventListener(new ChildEventListener() {
-            @Override
-            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-                Integer value = snapshot.getValue(Integer.class);
-            }
-
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-            }
-
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }
 
 
 

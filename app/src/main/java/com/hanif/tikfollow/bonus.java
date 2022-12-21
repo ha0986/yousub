@@ -1,5 +1,6 @@
 package com.hanif.tikfollow;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
@@ -13,14 +14,19 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Objects;
 
 
 public class bonus extends AppCompatActivity implements View.OnClickListener {
     public static String tag;
     public String claimedDate;
     public  Integer next;
+    public String date;
+    public Button claimedButton;
+    public ArrayList<Button> arrayList = new ArrayList<>() ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,10 +51,8 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
         button7.setOnClickListener(this);
         button8.setOnClickListener(this);
 
-        autoLoad.loadBanner(this,"bottom");
-        autoLoad.loadInter(this);
-        autoLoad.loadReward(this, "");
         getDatas();
+
     }
 
 
@@ -83,6 +87,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
                 break;
         }
         check();
+        claimedButton = findViewById(v.getId());
     }
 
 
@@ -90,6 +95,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
         next = Integer.valueOf(pref.getString("next", "1"));
         claimedDate= pref.getString("date", "1");
+
     }
 
 
@@ -97,33 +103,48 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
 
 
     public void check(){
-        String date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
-        if(date.equals(claimedDate)){
-            autoLoad.alart(this,"You can't Claim this offer now");
-        }else if(Integer.valueOf(tag).equals(next)){
-            autoLoad.alart(this,"You can't Claim this offer now");
-        }else{
-            SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
-            SharedPreferences.Editor editor = pref.edit();
-            next = Integer.parseInt(tag)+1;
-
-            editor.putString("date", date);
-            editor.putString("next", String.valueOf(next));
-
-            editor.apply();
+        date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
+        if(String.valueOf(next).equals("1") & Objects.equals(tag, "1")){
             claim();
-            autoLoad.alart(this,"You will get your offer within a day");
-
+        }else if(String.valueOf(next).equals("1") & !Objects.equals(tag, "1")){
+            autoLoad.alart(this, "Click on first Item to get the offer");
+        }else if(Objects.equals(date, claimedDate)){
+            autoLoad.alart(this, "You have already Claimed This offer");
+        }else if(!Objects.equals(date, claimedDate) & Objects.equals(tag, String.valueOf(next))){
+            claim();
         }
-
 
     }
 
 
-    public static void claim(){
+    @SuppressLint({"SetTextI18n", "ResourceAsColor"})
+    public void claim(){
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Days");
-        myRef.child(tag).setValue(0);
+        myRef.child(tag).child(autoLoad.userName).setValue(0);
+
+
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
+        SharedPreferences.Editor editor = pref.edit();
+        next = Integer.parseInt(tag)+1;
+
+        editor.putString("date", date);
+        editor.putString("next", String.valueOf(next));
+        claimedDate = date;
+        editor.apply();
+
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Tikfollow");
+        builder.setMessage("You will get your offer within a day. Please keep patience");
+        AlertDialog alert = builder.create();
+        alert.show();
+
+
+        claimedButton.setText("claimed");
+        claimedButton.setBackgroundColor(R.color.teal_200);
+
+
 
     }
 

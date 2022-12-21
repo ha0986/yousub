@@ -54,7 +54,7 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Claimed"
+                android:text="Claim"
                 android:textStyle="bold"
                 app:backgroundTint="#E91E63"
                 app:cornerRadius="60dp"
@@ -116,7 +116,7 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Claimed"
+                android:text="Claim"
                 android:textStyle="bold"
                 app:backgroundTint="#E91E63"
                 app:cornerRadius="60dp" />
