@@ -12,6 +12,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.lang.reflect.Array;
+import java.util.Dictionary;
+import java.util.Hashtable;
 
 public class task extends AppCompatActivity implements View.OnClickListener {
     public Intent myIntent;
@@ -20,7 +22,7 @@ public class task extends AppCompatActivity implements View.OnClickListener {
     public String minusUser;
     public Integer minusPoint;
     public Integer plusPoints;
-    public static Array users;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

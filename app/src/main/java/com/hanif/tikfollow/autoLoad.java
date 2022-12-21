@@ -36,6 +36,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Dictionary;
+import java.util.Hashtable;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -48,7 +49,7 @@ public class autoLoad {
     public  static boolean connection = false;
     public static String points = "500";
     public static FirebaseDatabase database = FirebaseDatabase.getInstance();
-
+    public static Dictionary users = new Hashtable();
 
 
 
@@ -264,8 +265,13 @@ public class autoLoad {
             }
             else {
                 String dict= String.valueOf(task.getResult().getValue());
+                dict = dict.replace("{","");
+                String[] arry = dict.split(",");
+                for (int i = 0; i<arry.length; i++){
+                    System.out.println("arr: " + arry[i]);
+                }
 
-                Log.d("hanif", dict);
+
 
             }
         });
