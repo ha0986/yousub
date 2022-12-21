@@ -65,7 +65,7 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
                 startActivity(myIntent);
                 break;
             case R.id.reward:
-                autoLoad.loadReward(this);
+                autoLoad.loadReward(this, "");
                 break;
             case R.id.exit:
                 autoLoad.Exit(profile.this, this);

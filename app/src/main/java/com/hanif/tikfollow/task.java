@@ -45,7 +45,7 @@ public class task extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.reward200:
-                autoLoad.loadReward(task.this);
+                autoLoad.showReward(this);
                 break;
             case  R.id.jokes:
                 myIntent = new Intent(task.this, jokes.class);

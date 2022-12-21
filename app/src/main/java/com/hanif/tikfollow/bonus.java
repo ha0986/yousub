@@ -3,15 +3,25 @@ package com.hanif.tikfollow;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import kotlin.collections.IntIterator;
+
 public class bonus extends AppCompatActivity implements View.OnClickListener {
     public static String tag;
+    public String claimedDate;
+    public  Integer next;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +46,10 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
         button7.setOnClickListener(this);
         button8.setOnClickListener(this);
 
+        autoLoad.loadBanner(this,"bottom");
+        autoLoad.loadInter(this);
+        autoLoad.loadReward(this, "");
+        getDatas();
     }
 
 
@@ -70,6 +84,42 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
                 break;
         }
     }
+
+
+    public void getDatas(){
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
+        next = Integer.valueOf(pref.getString("next", "1"));
+    }
+
+
+
+
+
+    public void check(){
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        Date date = new Date();
+        Log.d("hanif", String.valueOf(date));
+        if(String.valueOf(date).equals(claimedDate)){
+            autoLoad.alart(this,"You can't Claim this offer now");
+        }else if(Integer.valueOf(tag).equals(next)){
+            autoLoad.alart(this,"You can't Claim this offer now");
+        }else{
+            SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
+            SharedPreferences.Editor editor = pref.edit();
+            next = Integer.parseInt(tag)+1;
+
+            editor.putString("date", String.valueOf(date));
+            editor.putString("next", String.valueOf(next));
+
+
+
+            editor.apply();
+            claim();
+        }
+
+
+    }
+
 
     public static void claim(){
         FirebaseDatabase database = FirebaseDatabase.getInstance();
