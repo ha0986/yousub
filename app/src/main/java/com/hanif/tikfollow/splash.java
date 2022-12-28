@@ -17,6 +17,7 @@ public class splash extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         move();
+        autoLoad.checkNetwork(this);
         autoLoad.loadAdd(this);
     }
 
@@ -32,7 +33,7 @@ public class splash extends AppCompatActivity {
 
                 autoLoad.userName = username;
                 autoLoad.getdata();
-                Intent myIntent = new Intent(splash.this, task.class);
+                Intent myIntent = new Intent(splash.this, doTask.class);
                 startActivity(myIntent);
             }
         }, 3000);

@@ -5,23 +5,21 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.lang.reflect.Array;
-import java.util.Dictionary;
-import java.util.Hashtable;
 
-public class task extends AppCompatActivity implements View.OnClickListener {
+public class doTask extends AppCompatActivity implements View.OnClickListener {
     public Intent myIntent;
     public static TextView userpoints;
-    public Array array;
     public String minusUser;
-    public Integer minusPoint;
-    public Integer plusPoints;
+    public Integer minusPoint=500;
+    public Integer plusPoints=500;
+    public Integer click=1;
 
 
     @Override
@@ -56,19 +54,20 @@ public class task extends AppCompatActivity implements View.OnClickListener {
                 autoLoad.showReward(this);
                 break;
             case  R.id.jokes:
-                myIntent = new Intent(task.this, jokes.class);
+                myIntent = new Intent(doTask.this, jokes.class);
                 startActivity(myIntent);
                 break;
             case  R.id.bonusbtn:
-                myIntent = new Intent(task.this, bonus.class);
+                myIntent = new Intent(doTask.this, bonus.class);
                 startActivity(myIntent);
                 break;
             case R.id.back:
-                myIntent = new Intent(task.this, profile.class);
+                myIntent = new Intent(doTask.this, profile.class);
                 startActivity(myIntent);
                 break;
             case R.id.follow:
                 startTask();
+                click+=1;
                 break;
         }
     }
@@ -85,10 +84,13 @@ public class task extends AppCompatActivity implements View.OnClickListener {
 
 
     public void startTask(){
+        String[] toSplit = autoLoad.nameArry[click].split("=");
+        minusUser = toSplit[0];
         plusPoints = plusPoints+100;
-        minusPoint = minusPoint-100;
+        minusPoint =Integer.parseInt(toSplit[1])-100;
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.tiktok.com/"+ minusUser));
         startActivity(intent);
+        Log.d("name",minusUser);
     }
 
 
