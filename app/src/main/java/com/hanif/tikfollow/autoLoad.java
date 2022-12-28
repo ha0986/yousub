@@ -29,6 +29,8 @@ import com.google.android.gms.ads.rewarded.RewardedAd;
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.Arrays;
 import java.util.Objects;
 
 
@@ -238,7 +240,17 @@ public class autoLoad {
             else {
                 String dict= String.valueOf(task.getResult().getValue());
                 dict = dict.replace("{","");
+                dict = dict.replace("}","");
                 String[] list = dict.split(",");
+
+                for(int i=0; i<list.length;i++){
+                    String[] split = list[i].split("=");
+
+                    if (Integer.parseInt(split[1])>200){
+                        Log.d("name", list[i]);
+                    }
+
+                }
 
             }
         });

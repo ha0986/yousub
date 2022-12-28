@@ -20,6 +20,7 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
     public Integer minusPoint=500;
     public Integer plusPoints=500;
     public Integer click=1;
+    public String[] done;
 
 
     @Override
@@ -42,8 +43,10 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
         bonus.setOnClickListener(this);
 
 
-
-       autoLoad.getDatas();
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
+        String okay = pref.getString("done", "");
+        done = okay.split(",");
+        autoLoad.getDatas();
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -91,11 +94,17 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.tiktok.com/"+ minusUser));
         startActivity(intent);
         Log.d("name",minusUser);
+        clicked();
     }
 
 
 
-
+    public void clicked(){
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString("done", String.valueOf(done));
+        editor.apply();
+    }
 
 
 
