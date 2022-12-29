@@ -37,7 +37,7 @@ import java.util.Objects;
 
 
 public class autoLoad {
-    public static String userName;
+    public static String userName= "@hanif";
     private static RewardedAd mRewardedAd;
     private static AdView adView;
     private static InterstitialAd mInterstitialAd;
@@ -140,17 +140,13 @@ public class autoLoad {
     public static  void loadAdd(Context context){
         MobileAds.initialize(context, initializationStatus -> {
         });
-        loadInter(context);
-        loadReward(context,"");
-
-
     }
 
     public static void loadInter(Context context){
 
         AdRequest loadInter = new AdRequest.Builder().build();
 
-        InterstitialAd.load(context,"ca-app-pub-9422110628550448/7543745921", loadInter,
+        InterstitialAd.load(context,"ca-app-pub-3940256099942544/1033173712", loadInter,
                 new InterstitialAdLoadCallback() {
                     @Override
                     public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
@@ -167,7 +163,7 @@ public class autoLoad {
 
     public static void loadReward(Context context, String id){
         AdRequest adRequest = new AdRequest.Builder().build();
-        RewardedAd.load(context, id,
+        RewardedAd.load(context, "ca-app-pub-3940256099942544/5224354917",
                 adRequest, new RewardedAdLoadCallback() {
                     @Override
                     public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
@@ -195,6 +191,12 @@ public class autoLoad {
             mRewardedAd.show(activity, rewardItem -> {
                 // Handle the reward.
                 int rewardAmount = rewardItem.getAmount();
+                points = String.valueOf(Integer.parseInt(points)+rewardAmount);
+                if(rewardAmount == 200){
+                    doTask.userpoints.setText(points);
+                }else{
+                    profile.points.setText(points);
+                }
                 String rewardType = rewardItem.getType();
             });
         }

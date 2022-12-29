@@ -43,6 +43,9 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
 
         username.setText(autoLoad.userName);
         points.setText(autoLoad.points);
+
+        autoLoad.loadReward(this,"");
+
     }
 
 
@@ -90,6 +93,10 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
                 .setPositiveButton("Yes", (dialog, which) -> finish() )
                 .setNegativeButton("No", null)
                 .show();
+    }
+
+    public void onBackPressed() {
+
     }
 
 }

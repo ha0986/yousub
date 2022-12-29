@@ -86,4 +86,9 @@ public class more extends AppCompatActivity implements View.OnClickListener {
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         startActivity(browserIntent);
     }
+
+    public void onBackPressed() {
+        Intent myIntent = new Intent(more.this, profile.class);
+        startActivity(myIntent);
+    }
 }

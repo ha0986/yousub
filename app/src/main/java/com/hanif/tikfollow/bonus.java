@@ -4,6 +4,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -53,7 +54,9 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
         button8.setOnClickListener(this);
 
         getDatas();
-
+        autoLoad.loadInter(this);
+        autoLoad.loadReward(this,"");
+        autoLoad.loadBanner(this,"top");
     }
 
 
@@ -99,7 +102,6 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
         claimedDate= pref.getString("date", "1");
         Log.d("next", String.valueOf(next));
 
-         List<Button> buttons;
          int[] BUTTON_IDS = {
                 R.id.button1,
                 R.id.button2,
@@ -164,9 +166,13 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
         claimedButton.setBackgroundColor(R.color.teal_200);
 
 
-
     }
 
 
+    public void onBackPressed() {
+        autoLoad.showInter(this);
+        Intent myIntent = new Intent(bonus.this, profile.class);
+        startActivity(myIntent);
+    }
 
 }

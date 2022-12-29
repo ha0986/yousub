@@ -13,6 +13,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 
 public class doTask extends AppCompatActivity implements View.OnClickListener {
     public Intent myIntent;
@@ -21,6 +24,7 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
     public Integer minusPoint=500;
     public static Integer plusPoints=500;
     public Integer click=1;
+    public ArrayList<Integer> showInter= new ArrayList<>(Arrays.asList(3,7,10,13));
 
 
     @Override
@@ -45,6 +49,9 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
 
 
         autoLoad.getDatas();
+        autoLoad.loadInter(this);
+        autoLoad.loadReward(this,"");
+        autoLoad.loadBanner(this,"top");
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -76,14 +83,6 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
 
 
 
-
-    public void savedata(){
-        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
-        SharedPreferences.Editor editor = pref.edit();
-
-    }
-
-
     @SuppressLint("SetTextI18n")
     public void startTask(){
         String[] toSplit = autoLoad.nameList.get(click).split("=");
@@ -94,6 +93,9 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
         clicked();
         autoLoad.points = String.valueOf(plusPoints);
         userpoints.setText(plusPoints.toString());
+        if(showInter.contains(click)){
+            autoLoad.showInter(this);
+        }
 
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.tiktok.com/"+ minusUser.trim()));
         startActivity(intent);
@@ -110,7 +112,8 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
     }
 
     public void onBackPressed() {
-
+        Intent myIntent = new Intent(doTask.this, profile.class);
+        startActivity(myIntent);
     }
 
 

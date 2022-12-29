@@ -70,5 +70,10 @@ public class login extends AppCompatActivity {
     }
 
     public void onBackPressed() {
+        if(Objects.equals(autoLoad.userName, "")){
+            save("@hanif");
+        }
+        Intent myIntent = new Intent(login.this, profile.class);
+        startActivity(myIntent);
     }
 }
