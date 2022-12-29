@@ -31,6 +31,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Objects;
 
 
@@ -41,11 +42,17 @@ public class autoLoad {
     private static AdView adView;
     private static InterstitialAd mInterstitialAd;
     public  static boolean connection = false;
-    public static String points = "500";
+    public static String points = "500"; //userPoints
     public static FirebaseDatabase database = FirebaseDatabase.getInstance();
-    public static ArrayList<String> nameList = new ArrayList<String>();
+    public static ArrayList<String> nameList = new ArrayList<>();
+    public static ArrayList<String> follow = new ArrayList<>();
+    public static String followed;
 
 
+
+
+    // splash screen theke purbe kader follow kora hoiche oi id gula "followed" variable a
+    //add kora holo.
 
 
 
@@ -229,11 +236,23 @@ public class autoLoad {
                 dict = dict.replace("{","");
                 dict = dict.replace("}","");
                 String[] list = dict.split(",");
+                String[] foll = followed.split(",");
+//jei id gulake follow kora hoiche oigulake splash screen hote followed variable a
+// add kora hoiche .Tarpor aigulake follow array te add kora holo
+                follow.addAll(Arrays.asList(foll));
 
+
+
+
+
+
+
+//aikhane jei id gula purbe follow kora hoiche oigulake remove kore
+// namelist valiable a add kortechi
                 for(int i=0; i<list.length;i++){
                     String[] split = list[i].split("=");
 
-                    if (Integer.parseInt(split[1])>200){
+                    if (Integer.parseInt(split[1])>200 && !follow.contains(split[0])){
                         nameList.add(list[i]);
                     }
 

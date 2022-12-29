@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -20,7 +21,6 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
     public Integer minusPoint=500;
     public static Integer plusPoints=500;
     public Integer click=1;
-    public String[] done;
 
 
     @Override
@@ -43,9 +43,7 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
         bonus.setOnClickListener(this);
 
 
-        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
-        String okay = pref.getString("done", "");
-        done = okay.split(",");
+
         autoLoad.getDatas();
     }
 
@@ -92,12 +90,13 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
         minusUser = toSplit[0];
         plusPoints = plusPoints+100;
         minusPoint =Integer.parseInt(toSplit[1])-100;
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.tiktok.com/"+ minusUser.trim()));
-        startActivity(intent);
         autoLoad.storePlusMinus(plusPoints,minusUser, minusPoint);
         clicked();
         autoLoad.points = String.valueOf(plusPoints);
         userpoints.setText(plusPoints.toString());
+
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.tiktok.com/"+ minusUser.trim()));
+        startActivity(intent);
     }
 
 
@@ -105,7 +104,8 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
     public void clicked(){
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
         SharedPreferences.Editor editor = pref.edit();
-        editor.putString("done", String.valueOf(done));
+        autoLoad.followed = autoLoad.followed+ ","+ minusUser;
+        editor.putString("done", autoLoad.followed);
         editor.apply();
     }
 
