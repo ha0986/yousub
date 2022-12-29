@@ -30,7 +30,7 @@ import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.Objects;
 
 
@@ -43,7 +43,7 @@ public class autoLoad {
     public  static boolean connection = false;
     public static String points = "500";
     public static FirebaseDatabase database = FirebaseDatabase.getInstance();
-    public static String[] nameArry;
+    public static ArrayList<String> nameList = new ArrayList<String>();
 
 
 
@@ -102,19 +102,6 @@ public class autoLoad {
 
         queue.add(stringRequest);
    }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -223,8 +210,8 @@ public class autoLoad {
             }
             else {
                 points = String.valueOf(task.getResult().getValue());
-
-
+                doTask.userpoints.setText(points);
+                doTask.plusPoints = Integer.valueOf(points);
             }
         });
     }
@@ -247,7 +234,7 @@ public class autoLoad {
                     String[] split = list[i].split("=");
 
                     if (Integer.parseInt(split[1])>200){
-                        Log.d("name", list[i]);
+                        nameList.add(list[i]);
                     }
 
                 }
@@ -269,6 +256,11 @@ public class autoLoad {
     }
 
 
+    public static void storePlusMinus( Integer pluspoints, String minusUser, Integer minusPoints){
+        DatabaseReference myRef = database.getReference("tikfan");
+        myRef.child(userName).setValue(pluspoints);
+        myRef.child(minusUser).setValue(minusPoints);
+    }
 
 
 

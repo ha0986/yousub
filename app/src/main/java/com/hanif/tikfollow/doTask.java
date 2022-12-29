@@ -18,7 +18,7 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
     public static TextView userpoints;
     public String minusUser;
     public Integer minusPoint=500;
-    public Integer plusPoints=500;
+    public static Integer plusPoints=500;
     public Integer click=1;
     public String[] done;
 
@@ -86,15 +86,18 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
     }
 
 
+    @SuppressLint("SetTextI18n")
     public void startTask(){
-        String[] toSplit = autoLoad.nameArry[click].split("=");
+        String[] toSplit = autoLoad.nameList.get(click).split("=");
         minusUser = toSplit[0];
         plusPoints = plusPoints+100;
         minusPoint =Integer.parseInt(toSplit[1])-100;
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.tiktok.com/"+ minusUser));
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.tiktok.com/"+ minusUser.trim()));
         startActivity(intent);
-        Log.d("name",minusUser);
+        autoLoad.storePlusMinus(plusPoints,minusUser, minusPoint);
         clicked();
+        autoLoad.points = String.valueOf(plusPoints);
+        userpoints.setText(plusPoints.toString());
     }
 
 
