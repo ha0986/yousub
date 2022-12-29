@@ -15,9 +15,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
+
 import java.util.Date;
-import java.util.List;
+
 import java.util.Locale;
 import java.util.Objects;
 
@@ -95,7 +95,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
     }
 
 
-    @SuppressLint("ResourceAsColor")
+    @SuppressLint({"ResourceAsColor", "SetTextI18n"})
     public void getDatas(){
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
         next = Integer.valueOf(pref.getString("next", "1"));

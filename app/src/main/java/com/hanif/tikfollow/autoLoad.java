@@ -181,6 +181,8 @@ public class autoLoad {
                 }
                 String rewardType = rewardItem.getType();
             });
+        }else {
+            alart(activity,"Ads not loaded");
         }
     }
 

@@ -30,7 +30,7 @@ public class splash extends AppCompatActivity {
                 Intent myIntent = new Intent(splash.this, login.class);
                 startActivity(myIntent);
             }else {
-                SharedPreferences prefs = getApplicationContext().getSharedPreferences("MyPref", 0);
+
                 autoLoad.userName = username;
                 autoLoad.getdata();
                 Intent myIntent = new Intent(splash.this, doTask.class);
