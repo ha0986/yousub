@@ -109,6 +109,9 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
         editor.apply();
     }
 
+    public void onBackPressed() {
+
+    }
 
 
 }
