@@ -16,6 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 import java.util.Objects;
 
@@ -26,7 +27,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
     public  Integer next;
     public String date;
     public Button claimedButton;
-    public ArrayList<Button> arrayList = new ArrayList<>() ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,11 +92,29 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
     }
 
 
+    @SuppressLint("ResourceAsColor")
     public void getDatas(){
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
         next = Integer.valueOf(pref.getString("next", "1"));
         claimedDate= pref.getString("date", "1");
+        Log.d("next", String.valueOf(next));
 
+         List<Button> buttons;
+         int[] BUTTON_IDS = {
+                R.id.button1,
+                R.id.button2,
+                R.id.button3,
+                R.id.button4,
+                R.id.button5,
+                R.id.button6,
+                R.id.button7,
+        };
+
+         for(int i=0; i<next;i++){
+            Button button = findViewById(BUTTON_IDS[i]);
+            button.setText("Claimed");
+            button.setBackgroundColor(R.color.teal_200);
+         }
     }
 
 
@@ -147,6 +166,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
 
 
     }
+
 
 
 }
