@@ -56,7 +56,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
         getDatas();
         autoLoad.loadInter(this);
         autoLoad.loadReward(this,"");
-        autoLoad.loadBanner(this,"top");
+        autoLoad.loadBanner(this,"bottom");
     }
 
 

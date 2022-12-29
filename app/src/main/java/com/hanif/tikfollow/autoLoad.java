@@ -38,7 +38,6 @@ import java.util.Objects;
 public class autoLoad {
     public static String userName= "@hanif";
     private static RewardedAd mRewardedAd;
-    private static AdView adView;
     private static InterstitialAd mInterstitialAd;
     public  static boolean connection = false;
     public static String points = "500"; //userPoints
@@ -101,13 +100,9 @@ public class autoLoad {
     public static void loadBanner(Context context, String gravity){
         LinearLayout layout = new LinearLayout(context);
         layout.setOrientation(LinearLayout.VERTICAL);
-        if (Objects.equals(gravity, "top")){
-            layout.setGravity(Gravity.TOP);
-        }else{
-            layout.setGravity(Gravity.BOTTOM);
-        }
 
-        adView = new AdView(context);
+        layout.setGravity(Gravity.BOTTOM);
+        AdView adView = new AdView(context);
         adView.setAdSize(AdSize.BANNER);
         adView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
         AdRequest.Builder adRequestBuilder = new AdRequest.Builder();
