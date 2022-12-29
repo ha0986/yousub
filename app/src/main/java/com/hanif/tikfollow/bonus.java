@@ -126,20 +126,34 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
     public void check(){
         date = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date());
         if(String.valueOf(next).equals("1") & Objects.equals(tag, "1")){
-            claim();
+            loadAdd();
         }else if(String.valueOf(next).equals("1") & !Objects.equals(tag, "1")){
             autoLoad.alart(this, "Click on first Item to get the offer");
         }else if(Objects.equals(date, claimedDate)){
             autoLoad.alart(this, "You have already Claimed This offer");
         }else if(!Objects.equals(date, claimedDate) & Objects.equals(tag, String.valueOf(next))){
-            claim();
+            loadAdd();
         }
 
     }
 
+    public void loadAdd(){
+        new android.app.AlertDialog.Builder(this)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setTitle("Tikfollow")
+                .setMessage("Watch add to claim this offer")
+                .setPositiveButton("OK", (dialog, which) ->claim())
+                .setNegativeButton("No", null)
+                .show();
+
+    }
+
+
+
 
     @SuppressLint({"SetTextI18n", "ResourceAsColor"})
     public void claim(){
+        autoLoad.showReward(this);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Days");
         myRef.child(tag).child(autoLoad.userName).setValue(0);

@@ -5,7 +5,6 @@ package com.hanif.tikfollow;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 import android.view.Gravity;
 import android.widget.LinearLayout;
@@ -80,23 +79,6 @@ public class autoLoad {
 
 
 
-
-    public static void taskComplated(Context context,Activity activity) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Task complated");
-        builder.setMessage("You have completed all task of the day. Now we recommend you to read some jokes.. Will you read jokes?")
-                .setCancelable(false)
-                .setPositiveButton("Yes", (dialog, id) -> {
-                    context.startActivity(new Intent(context, jokes.class));
-                    activity.finish();
-                })
-                .setNegativeButton("No", (dialog, id) -> {
-                    context.startActivity(new Intent(context, profile.class));
-                    activity.finish();
-                });
-        AlertDialog alert = builder.create();
-        alert.show();
-    }
 
 
 
@@ -192,9 +174,9 @@ public class autoLoad {
                 // Handle the reward.
                 int rewardAmount = rewardItem.getAmount();
                 points = String.valueOf(Integer.parseInt(points)+rewardAmount);
-                if(rewardAmount == 200){
+                if(rewardAmount == 10){
                     doTask.userpoints.setText(points);
-                }else{
+                }else if (rewardAmount == 300){
                     profile.points.setText(points);
                 }
                 String rewardType = rewardItem.getType();

@@ -49,6 +49,7 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
 
 
         autoLoad.getDatas();
+        autoLoad.checkNetwork(this);
         autoLoad.loadInter(this);
         autoLoad.loadReward(this,"");
         autoLoad.loadBanner(this,"top");

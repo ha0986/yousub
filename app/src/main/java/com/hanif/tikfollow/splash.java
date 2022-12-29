@@ -17,7 +17,6 @@ public class splash extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         move();
-        autoLoad.checkNetwork(this);
         autoLoad.loadAdd(this);
     }
 
