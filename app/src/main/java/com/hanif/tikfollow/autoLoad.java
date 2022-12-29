@@ -100,11 +100,10 @@ public class autoLoad {
     public static void loadBanner(Context context, String gravity){
         LinearLayout layout = new LinearLayout(context);
         layout.setOrientation(LinearLayout.VERTICAL);
-
-        layout.setGravity(Gravity.BOTTOM);
+        layout.setGravity(Gravity.TOP);
         AdView adView = new AdView(context);
         adView.setAdSize(AdSize.BANNER);
-        adView.setAdUnitId("ca-app-pub-3940256099942544/6300978111");
+        adView.setAdUnitId("ca-app-pub-9422110628550448/8550539984");
         AdRequest.Builder adRequestBuilder = new AdRequest.Builder();
         layout.addView(adView);
         adView.loadAd(adRequestBuilder.build());
@@ -123,7 +122,7 @@ public class autoLoad {
 
         AdRequest loadInter = new AdRequest.Builder().build();
 
-        InterstitialAd.load(context,"ca-app-pub-3940256099942544/1033173712", loadInter,
+        InterstitialAd.load(context,"ca-app-pub-9422110628550448/7543745921", loadInter,
                 new InterstitialAdLoadCallback() {
                     @Override
                     public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
@@ -140,7 +139,7 @@ public class autoLoad {
 
     public static void loadReward(Context context, String id){
         AdRequest adRequest = new AdRequest.Builder().build();
-        RewardedAd.load(context, "ca-app-pub-3940256099942544/5224354917",
+        RewardedAd.load(context, id,
                 adRequest, new RewardedAdLoadCallback() {
                     @Override
                     public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {

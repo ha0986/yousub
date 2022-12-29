@@ -11,6 +11,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -28,6 +30,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
     public  Integer next;
     public String date;
     public Button claimedButton;
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +58,14 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
 
         getDatas();
         autoLoad.loadInter(this);
-        autoLoad.loadReward(this,"");
-        autoLoad.loadBanner(this,"bottom");
+        autoLoad.loadReward(this,"ca-app-pub-9422110628550448/1593892548");
+
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+
     }
 
 

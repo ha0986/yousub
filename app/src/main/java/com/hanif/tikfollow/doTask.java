@@ -12,8 +12,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.daimajia.androidanimations.library.Techniques;
-import com.daimajia.androidanimations.library.YoYo;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,6 +21,7 @@ import java.util.Arrays;
 
 public class doTask extends AppCompatActivity implements View.OnClickListener {
     public Intent myIntent;
+    private AdView mAdView;
     public static TextView userpoints;
     public String minusUser;
     public Integer minusPoint=500;
@@ -53,8 +54,12 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
         autoLoad.getDatas();
         autoLoad.checkNetwork(this);
         autoLoad.loadInter(this);
-        autoLoad.loadReward(this,"");
-        autoLoad.loadBanner(this,"top");
+        autoLoad.loadReward(this,"ca-app-pub-9422110628550448/4398078885");
+        autoLoad.loadBanner(doTask.this,"top");
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
     }
 
     @SuppressLint("NonConstantResourceId")
