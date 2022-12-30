@@ -55,7 +55,8 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.939" />
+        app:layout_constraintVertical_bias="0.939"
+        app:rippleColor="#191C26" />
 
     <TextView
         android:id="@+id/textView2"
@@ -63,7 +64,7 @@
         android:layout_height="286dp"
         android:text="@string/textview"
         android:textAlignment="center"
-        android:textColor="#007F00"
+        android:textColor="#00FEFE"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -16,7 +16,7 @@
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="0.78">
+        app:layout_constraintVertical_bias="0.86">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,7 +25,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/imageView1"
                 android:layout_width="6dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -43,7 +43,7 @@
                 app:cornerRadius="10dp" />
 
             <View
-                android:id="@+id/divider"
+                android:id="@+id/divider1"
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:layout_weight=".2"
@@ -54,7 +54,7 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Claim"
+                android:text="@string/claim"
                 android:textStyle="bold"
                 app:backgroundTint="#E91E63"
                 app:cornerRadius="60dp"
@@ -80,7 +80,7 @@
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="0.69">
+        app:layout_constraintVertical_bias="0.77">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -89,7 +89,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/imageView2"
                 android:layout_width="6dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -106,7 +106,7 @@
                 app:cornerRadius="10dp" />
 
             <View
-                android:id="@+id/divider"
+                android:id="@+id/divider3"
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:layout_weight=".2"
@@ -117,13 +117,13 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Claim"
+                android:text="@string/claim"
                 android:textStyle="bold"
                 app:backgroundTint="#E91E63"
                 app:cornerRadius="60dp" />
 
             <View
-                android:id="@+id/divider2"
+                android:id="@+id/divider4"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight=".3"
@@ -141,7 +141,7 @@
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="0.6">
+        app:layout_constraintVertical_bias="0.66999996">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -150,7 +150,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/imageView5"
                 android:layout_width="6dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -167,7 +167,7 @@
                 app:cornerRadius="10dp" />
 
             <View
-                android:id="@+id/divider"
+                android:id="@+id/divider6"
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:layout_weight=".2"
@@ -178,14 +178,14 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Claim"
+                android:text="@string/claim"
                 android:textStyle="bold"
                 app:backgroundTint="#E91E63"
                 app:cornerRadius="60dp"
                 tools:ignore="DuplicateSpeakableTextCheck" />
 
             <View
-                android:id="@+id/divider2"
+                android:id="@+id/divider7"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight=".3"
@@ -204,7 +204,7 @@
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="0.51">
+        app:layout_constraintVertical_bias="0.58000004">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -213,7 +213,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/imageView8"
                 android:layout_width="6dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -224,14 +224,14 @@
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="+1 Follow"
+                android:text="@string/_1_follow"
                 android:textColor="#000000"
                 android:textStyle="bold"
                 app:cornerRadius="10dp"
                 tools:ignore="DuplicateSpeakableTextCheck" />
 
             <View
-                android:id="@+id/divider"
+                android:id="@+id/divider9"
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:layout_weight=".2"
@@ -242,13 +242,13 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Claim"
+                android:text="@string/claim"
                 android:textStyle="bold"
                 app:backgroundTint="#E91E63"
                 app:cornerRadius="60dp" />
 
             <View
-                android:id="@+id/divider2"
+                android:id="@+id/divider10"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight=".3"
@@ -266,7 +266,7 @@
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="0.42000002">
+        app:layout_constraintVertical_bias="0.48000002">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -275,7 +275,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/imageView4"
                 android:layout_width="6dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -292,7 +292,7 @@
                 app:cornerRadius="10dp" />
 
             <View
-                android:id="@+id/divider"
+                android:id="@+id/divider11"
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:layout_weight=".2"
@@ -303,13 +303,13 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Claim"
+                android:text="@string/claim"
                 android:textStyle="bold"
                 app:backgroundTint="#E91E63"
                 app:cornerRadius="60dp" />
 
             <View
-                android:id="@+id/divider2"
+                android:id="@+id/divider12"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight=".3"
@@ -327,7 +327,7 @@
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="0.32999998">
+        app:layout_constraintVertical_bias="0.39">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -336,7 +336,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/imageView"
                 android:layout_width="6dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -347,13 +347,13 @@
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="+1 Follow"
+                android:text="@string/_1_follow"
                 android:textColor="#000000"
                 android:textStyle="bold"
                 app:cornerRadius="10dp" />
 
             <View
-                android:id="@+id/divider"
+                android:id="@+id/divider13"
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:layout_weight=".2"
@@ -364,13 +364,13 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Claim"
+                android:text="@string/claim"
                 android:textStyle="bold"
                 app:backgroundTint="#E91E63"
                 app:cornerRadius="60dp" />
 
             <View
-                android:id="@+id/divider2"
+                android:id="@+id/divider16"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight=".3"
@@ -389,7 +389,7 @@
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="0.24000001">
+        app:layout_constraintVertical_bias="0.3">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -398,7 +398,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/imageView6"
                 android:layout_width="6dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -415,7 +415,7 @@
                 app:cornerRadius="10dp" />
 
             <View
-                android:id="@+id/divider"
+                android:id="@+id/divider17"
                 android:layout_width="1dp"
                 android:layout_height="match_parent"
                 android:layout_weight=".2"
@@ -426,13 +426,13 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Claim"
+                android:text="@string/claim"
                 android:textStyle="bold"
                 app:backgroundTint="#E91E63"
                 app:cornerRadius="60dp" />
 
             <View
-                android:id="@+id/divider2"
+                android:id="@+id/divider18"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight=".3"
@@ -461,7 +461,7 @@
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="0.148">
+        app:layout_constraintVertical_bias="0.19999999">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -481,7 +481,7 @@
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="+1 Follow"
+                android:text="@string/_1_follow"
                 android:textAlignment="center"
                 android:textColor="#000000"
                 android:textStyle="bold"
@@ -499,13 +499,13 @@
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Claim"
+                android:text="@string/claim"
                 android:textStyle="bold"
                 app:backgroundTint="#E91E63"
                 app:cornerRadius="60dp" />
 
             <View
-                android:id="@+id/divider2"
+                android:id="@+id/divider19"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight=".3"
@@ -527,14 +527,14 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Claim them for free "
-        android:textColor="#9C27B0"
+        android:text="@string/claim_them_for_free"
+        android:textColor="#00FFFF"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -542,7 +542,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="0.086" />
+        app:layout_constraintVertical_bias="0.110000014" />
 
 
 

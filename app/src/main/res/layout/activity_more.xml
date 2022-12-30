@@ -5,7 +5,7 @@
     android:id="@+id/relativeLayout4"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#292503"
+    android:background="#191C26"
     tools:context=".more">
 
     <ImageView

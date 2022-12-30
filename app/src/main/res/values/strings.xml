@@ -17,7 +17,10 @@
     <string name="splash">Claim likes and followers</string>
     <string name="continue_as_guest">Continue As Guest</string>
     <string name="hint">hint</string>
-    <string name="enter_your_tiktok_username">Enter your Tiktok Username</string>
+    <string name="enter_your_tiktok_username">Enter your Likee url</string>
     <string name="type_here">Type here</string>
     <string name="done">Done</string>
+    <string name="claim">Claim</string>
+    <string name="claim_them_for_free">Claim them for free</string>
+    <string name="_1_follow">+1 Follow</string>
 </resources>
