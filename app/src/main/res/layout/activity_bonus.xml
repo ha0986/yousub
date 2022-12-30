@@ -37,7 +37,7 @@
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="+ 25 likes"
+                android:text="@string/_25_likes"
                 android:textColor="#000000"
                 android:textStyle="bold"
                 app:cornerRadius="10dp" />
@@ -93,6 +93,7 @@
                 android:layout_width="6dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:contentDescription="@string/ap"
                 app:srcCompat="@drawable/clock" />
 
             <Button
@@ -100,7 +101,7 @@
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="+ 20 likes"
+                android:text="@string/_20_likes"
                 android:textColor="#000000"
                 android:textStyle="bold"
                 app:cornerRadius="10dp" />
@@ -154,6 +155,7 @@
                 android:layout_width="6dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:contentDescription="@string/a"
                 app:srcCompat="@drawable/clock" />
 
             <Button
@@ -161,7 +163,7 @@
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="+15 likes"
+                android:text="@string/_15_likes"
                 android:textColor="#000000"
                 android:textStyle="bold"
                 app:cornerRadius="10dp" />
@@ -217,6 +219,7 @@
                 android:layout_width="6dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:contentDescription="@string/app_"
                 app:srcCompat="@drawable/clock" />
 
             <Button
@@ -279,6 +282,7 @@
                 android:layout_width="6dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:contentDescription="@string/app_n"
                 app:srcCompat="@drawable/clock" />
 
             <Button
@@ -286,7 +290,7 @@
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="+10 likes"
+                android:text="@string/_10_likes"
                 android:textColor="#000000"
                 android:textStyle="bold"
                 app:cornerRadius="10dp" />
@@ -340,6 +344,7 @@
                 android:layout_width="6dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:contentDescription="@string/app_na"
                 app:srcCompat="@drawable/clock" />
 
             <Button
@@ -402,6 +407,7 @@
                 android:layout_width="6dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:contentDescription="@string/app_name"
                 app:srcCompat="@drawable/clock" />
 
             <Button
@@ -409,7 +415,7 @@
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="+ 5 likes"
+                android:text="@string/_5_likes"
                 android:textColor="#000000"
                 android:textStyle="bold"
                 app:cornerRadius="10dp" />
@@ -474,6 +480,7 @@
                 android:layout_width="6dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:contentDescription="@string/app_names"
                 app:srcCompat="@drawable/clock" />
 
             <Button

@@ -23,4 +23,9 @@
     <string name="claim">Claim</string>
     <string name="claim_them_for_free">Claim them for free</string>
     <string name="_1_follow">+1 Follow</string>
+    <string name="_25_likes">+ 25 likes</string>
+    <string name="_20_likes">+ 20 likes</string>
+    <string name="_15_likes">+15 likes</string>
+    <string name="_10_likes">+10 likes</string>
+    <string name="_5_likes">+ 5 likes</string>
 </resources>
