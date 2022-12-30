@@ -36,10 +36,10 @@ import java.util.Objects;
 
 
 public class autoLoad {
-    public static String userName= "@hanif";
+    public static String userName = "@hanif";
     private static RewardedAd mRewardedAd;
     private static InterstitialAd mInterstitialAd;
-    public  static boolean connection = false;
+    public static boolean connection = false;
     public static String points = "500"; //userPoints
     public static FirebaseDatabase database = FirebaseDatabase.getInstance();
     public static ArrayList<String> nameList = new ArrayList<>();
@@ -48,11 +48,8 @@ public class autoLoad {
 
 
 
-
     // splash screen theke purbe kader follow kora hoiche oi id gula "followed" variable a
     //add kora holo.
-
-
 
 
     //for https
@@ -61,43 +58,29 @@ public class autoLoad {
     static String url = "https://www.google.com/";
 
 
+    public static void alart(Context context, String text) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("Tikfollow");
+        builder.setMessage(text);
+        AlertDialog alert = builder.create();
+        alert.show();
+    }
 
 
-
-
-
-
-   public static void alart(Context context, String text){
-       AlertDialog.Builder builder = new AlertDialog.Builder(context);
-       builder.setTitle("Tikfollow");
-       builder.setMessage(text);
-       AlertDialog alert = builder.create();
-       alert.show();
-   }
-
-
-
-
-
-
-
-
-    public static void checkNetwork(Context context){
-        queue =  Volley.newRequestQueue(context);
+    public static void checkNetwork(Context context) {
+        queue = Volley.newRequestQueue(context);
         @SuppressLint("SetTextI18n") StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 response -> connection = true,
-                error -> {connection = false; alart(context,"Please turn on your data connection");});
+                error -> {
+                    connection = false;
+                    alart(context, "Please turn on your data connection");
+                });
 
         queue.add(stringRequest);
-   }
+    }
 
 
-
-
-
-
-
-    public static void loadBanner(Context context, String gravity){
+    public static void loadBanner(Context context, String gravity) {
         LinearLayout layout = new LinearLayout(context);
         layout.setOrientation(LinearLayout.VERTICAL);
         layout.setGravity(Gravity.TOP);
@@ -110,19 +93,16 @@ public class autoLoad {
     }
 
 
-
-
-
-    public static  void loadAdd(Context context){
+    public static void loadAdd(Context context) {
         MobileAds.initialize(context, initializationStatus -> {
         });
     }
 
-    public static void loadInter(Context context){
+    public static void loadInter(Context context) {
 
         AdRequest loadInter = new AdRequest.Builder().build();
 
-        InterstitialAd.load(context,"ca-app-pub-9422110628550448/7543745921", loadInter,
+        InterstitialAd.load(context, "ca-app-pub-9422110628550448/7543745921", loadInter,
                 new InterstitialAdLoadCallback() {
                     @Override
                     public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
@@ -137,7 +117,7 @@ public class autoLoad {
                 });
     }
 
-    public static void loadReward(Context context, String id){
+    public static void loadReward(Context context, String id) {
         AdRequest adRequest = new AdRequest.Builder().build();
         RewardedAd.load(context, id,
                 adRequest, new RewardedAdLoadCallback() {
@@ -154,7 +134,7 @@ public class autoLoad {
 
     }
 
-    public static void showInter(Activity activity){
+    public static void showInter(Activity activity) {
         if (mInterstitialAd != null) {
             mInterstitialAd.show(activity);
         } else {
@@ -162,31 +142,26 @@ public class autoLoad {
         }
     }
 
-    public static void showReward(Activity activity){
+    public static void showReward(Activity activity) {
         if (mRewardedAd != null) {
             mRewardedAd.show(activity, rewardItem -> {
                 // Handle the reward.
                 int rewardAmount = rewardItem.getAmount();
-                points = String.valueOf(Integer.parseInt(points)+rewardAmount);
-                if(rewardAmount == 10){
+                points = String.valueOf(Integer.parseInt(points) + rewardAmount);
+                if (rewardAmount == 10) {
                     doTask.userpoints.setText(points);
-                }else if (rewardAmount == 300){
+                } else if (rewardAmount == 300) {
                     profile.points.setText(points);
                 }
                 String rewardType = rewardItem.getType();
             });
-        }else {
-            alart(activity,"Ads not loaded");
+        } else {
+            alart(activity, "Ads not loaded");
         }
     }
 
 
-
-
-
-
-
-    public static void getdata(){
+    public static void getdata() {
 
         DatabaseReference myRef = database.getReference("tikfan");
 
@@ -194,8 +169,7 @@ public class autoLoad {
         myRef.child(userName).get().addOnCompleteListener(task -> {
             if (!task.isSuccessful()) {
                 Log.e("firebase", "Error getting data", task.getException());
-            }
-            else {
+            } else {
                 points = String.valueOf(task.getResult().getValue());
                 doTask.userpoints.setText(points);
                 doTask.plusPoints = Integer.valueOf(points);
@@ -203,20 +177,19 @@ public class autoLoad {
         });
     }
 
-    public static void getDatas(){
+    public static void getDatas() {
         DatabaseReference myRef = database.getReference("tikfan");
 
 
         myRef.get().addOnCompleteListener(task -> {
             if (!task.isSuccessful()) {
                 Log.e("firebase", "Error getting data", task.getException());
-            }
-            else {
-                String dict= String.valueOf(task.getResult().getValue());
-                dict = dict.replace("{","");
-                dict = dict.replace("}","");
+            } else {
+                String dict = String.valueOf(task.getResult().getValue());
+                dict = dict.replace("{", "");
+                dict = dict.replace("}", "");
                 String[] list = dict.split(",");
-                if(!Objects.equals(followed, "")){
+                if (!Objects.equals(followed, "")) {
                     String[] foll = followed.split(",");
                     follow.addAll(Arrays.asList(foll));
                 }
@@ -225,18 +198,12 @@ public class autoLoad {
 // add kora hoiche .Tarpor aigulake follow array te add kora holo
 
 
-
-
-
-
-
-
 //aikhane jei id gula purbe follow kora hoiche oigulake remove kore
 // namelist valiable a add kortechi
-                for(int i=0; i<list.length;i++){
+                for (int i = 0; i < list.length; i++) {
                     String[] split = list[i].split("=");
 
-                    if (Integer.parseInt(split[1])>200 && !follow.contains(split[0])){
+                    if (Integer.parseInt(split[1]) > 200 && !follow.contains(split[0])) {
                         nameList.add(list[i]);
                     }
 
@@ -246,26 +213,24 @@ public class autoLoad {
         });
     }
 
-    public static void savedata(String userName){
+    public static void savedata(String userName) {
         DatabaseReference myRef = database.getReference("tikfan");
         myRef.child(userName).setValue(Integer.valueOf(points));
     }
 
 
-    public static void removedata(String userName){
+    public static void removedata(String userName) {
         DatabaseReference myRef = database.getReference("tikfan");
         myRef.child(userName).removeValue();
 
     }
 
 
-    public static void storePlusMinus( Integer pluspoints, String minusUser, Integer minusPoints){
+    public static void storePlusMinus(Integer pluspoints, String minusUser, Integer minusPoints) {
         DatabaseReference myRef = database.getReference("tikfan");
         myRef.child(userName).setValue(pluspoints);
         myRef.child(minusUser).setValue(minusPoints);
     }
-
-
 
 }
 
