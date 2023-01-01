@@ -189,7 +189,7 @@ public class autoLoad {
                 dict = dict.replace("{", "");
                 dict = dict.replace("}", "");
                 String[] list = dict.split(",");
-                if (!Objects.equals(followed, "")) {
+                if (followed.length()>3) {
                     String[] foll = followed.split(",");
                     follow.addAll(Arrays.asList(foll));
                 }

@@ -10,7 +10,11 @@
     <androidx.cardview.widget.CardView
         android:layout_width="380dp"
         android:layout_height="50dp"
+        android:backgroundTint="#1B1E28"
+        app:cardBackgroundColor="#1B1E28"
         app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="10dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
@@ -37,10 +41,11 @@
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#00E3FF"
                 android:text="@string/_25_likes"
                 android:textColor="#000000"
                 android:textStyle="bold"
-                app:cornerRadius="10dp" />
+                app:cornerRadius="20dp" />
 
             <View
                 android:id="@+id/divider1"
@@ -55,8 +60,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/claim"
+                android:textColor="#8E24AA"
                 android:textStyle="bold"
-                app:backgroundTint="#E91E63"
+                app:backgroundTint="#FFFFFF"
                 app:cornerRadius="60dp"
                 tools:ignore="DuplicateSpeakableTextCheck" />
 
@@ -74,6 +80,7 @@
         android:id="@+id/cardView5"
         android:layout_width="380dp"
         android:layout_height="50dp"
+        android:backgroundTint="#1B1E28"
         app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView7"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,10 +108,11 @@
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#00E3FF"
                 android:text="@string/_20_likes"
                 android:textColor="#000000"
                 android:textStyle="bold"
-                app:cornerRadius="10dp" />
+                app:cornerRadius="20dp" />
 
             <View
                 android:id="@+id/divider3"
@@ -119,8 +127,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/claim"
+                android:textColor="#8E24AA"
                 android:textStyle="bold"
-                app:backgroundTint="#E91E63"
+                app:backgroundTint="#FFFFFF"
                 app:cornerRadius="60dp" />
 
             <View
@@ -136,6 +145,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="380dp"
         android:layout_height="50dp"
+        android:backgroundTint="#1B1E28"
         app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView7"
         app:layout_constraintEnd_toEndOf="parent"
@@ -163,10 +173,11 @@
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#00E3FF"
                 android:text="@string/_15_likes"
                 android:textColor="#000000"
                 android:textStyle="bold"
-                app:cornerRadius="10dp" />
+                app:cornerRadius="20dp" />
 
             <View
                 android:id="@+id/divider6"
@@ -181,8 +192,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/claim"
+                android:textColor="#8E24AA"
                 android:textStyle="bold"
-                app:backgroundTint="#E91E63"
+                app:backgroundTint="#FFFFFF"
                 app:cornerRadius="60dp"
                 tools:ignore="DuplicateSpeakableTextCheck" />
 
@@ -200,6 +212,7 @@
         android:id="@+id/cardView4"
         android:layout_width="380dp"
         android:layout_height="50dp"
+        android:backgroundTint="#1B1E28"
         app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView7"
         app:layout_constraintEnd_toEndOf="parent"
@@ -227,10 +240,11 @@
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#00E3FF"
                 android:text="@string/_1_follow"
                 android:textColor="#000000"
                 android:textStyle="bold"
-                app:cornerRadius="10dp"
+                app:cornerRadius="20dp"
                 tools:ignore="DuplicateSpeakableTextCheck" />
 
             <View
@@ -246,8 +260,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/claim"
+                android:textColor="#8E24AA"
                 android:textStyle="bold"
-                app:backgroundTint="#E91E63"
+                app:backgroundTint="#FFFFFF"
                 app:cornerRadius="60dp" />
 
             <View
@@ -263,6 +278,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="380dp"
         android:layout_height="50dp"
+        android:backgroundTint="#1B1E28"
         app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView7"
         app:layout_constraintEnd_toEndOf="parent"
@@ -290,10 +306,11 @@
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#00E3FF"
                 android:text="@string/_10_likes"
                 android:textColor="#000000"
                 android:textStyle="bold"
-                app:cornerRadius="10dp" />
+                app:cornerRadius="20dp" />
 
             <View
                 android:id="@+id/divider11"
@@ -308,8 +325,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/claim"
+                android:textColor="#8E24AA"
                 android:textStyle="bold"
-                app:backgroundTint="#E91E63"
+                app:backgroundTint="#FFFFFF"
                 app:cornerRadius="60dp" />
 
             <View
@@ -325,6 +343,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="380dp"
         android:layout_height="50dp"
+        android:backgroundTint="#1B1E28"
         app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView7"
         app:layout_constraintEnd_toEndOf="parent"
@@ -352,10 +371,11 @@
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#00E3FF"
                 android:text="@string/_1_follow"
                 android:textColor="#000000"
                 android:textStyle="bold"
-                app:cornerRadius="10dp" />
+                app:cornerRadius="20dp" />
 
             <View
                 android:id="@+id/divider13"
@@ -370,8 +390,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/claim"
+                android:textColor="#8E24AA"
                 android:textStyle="bold"
-                app:backgroundTint="#E91E63"
+                app:backgroundTint="#FFFFFF"
                 app:cornerRadius="60dp" />
 
             <View
@@ -388,6 +409,7 @@
         android:id="@+id/cardView3"
         android:layout_width="380dp"
         android:layout_height="50dp"
+        android:backgroundTint="#1B1E28"
         app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView7"
         app:layout_constraintEnd_toEndOf="parent"
@@ -415,10 +437,11 @@
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#00E3FF"
                 android:text="@string/_5_likes"
                 android:textColor="#000000"
                 android:textStyle="bold"
-                app:cornerRadius="10dp" />
+                app:cornerRadius="20dp" />
 
             <View
                 android:id="@+id/divider17"
@@ -433,8 +456,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/claim"
+                android:textColor="#8E24AA"
                 android:textStyle="bold"
-                app:backgroundTint="#E91E63"
+                app:backgroundTint="#FFFFFF"
                 app:cornerRadius="60dp" />
 
             <View
@@ -451,6 +475,7 @@
         android:id="@+id/imageView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#1B1E28"
         android:contentDescription="@string/a"
         android:scaleType="fitXY"
         app:layout_constraintStart_toStartOf="parent"
@@ -461,6 +486,7 @@
         android:id="@+id/cardView2"
         android:layout_width="380dp"
         android:layout_height="50dp"
+        android:backgroundTint="#1B1E28"
         app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView7"
         app:layout_constraintEnd_toEndOf="parent"
@@ -488,11 +514,13 @@
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:backgroundTint="#00E3FF"
                 android:text="@string/_1_follow"
                 android:textAlignment="center"
                 android:textColor="#000000"
                 android:textStyle="bold"
-                app:cornerRadius="10dp" />
+                app:cornerRadius="20dp"
+                app:rippleColor="#00FFFFFF" />
 
             <View
                 android:id="@+id/divider"
@@ -508,8 +536,9 @@
                 android:layout_weight="1"
                 android:text="@string/claim"
                 android:textStyle="bold"
-                app:backgroundTint="#E91E63"
-                app:cornerRadius="60dp" />
+                app:backgroundTint="#FFFFFF"
+                app:cornerRadius="60dp"
+                android:textColor="#8E24AA" />
 
             <View
                 android:id="@+id/divider19"

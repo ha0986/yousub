@@ -67,9 +67,9 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
         autoLoad.loadReward(this,"ca-app-pub-9422110628550448/4398078885");
         autoLoad.loadBanner(doTask.this,"top");
 
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+//        mAdView = findViewById(R.id.adView);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+ //       mAdView.loadAd(adRequest);
 
 
         appUpdateManager = AppUpdateManagerFactory.create(getApplicationContext());
