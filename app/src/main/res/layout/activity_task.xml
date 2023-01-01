@@ -122,7 +122,7 @@
         android:id="@+id/bonusbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Get Bonus"
+        android:text="Claim Bonus"
         android:textColor="#000000"
         android:textStyle="bold"
         app:backgroundTint="#FFEB3B"

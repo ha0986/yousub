@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "964561352695",
-    "firebase_url": "https://tikfolow-1160d-default-rtdb.firebaseio.com",
-    "project_id": "tikfolow-1160d",
-    "storage_bucket": "tikfolow-1160d.appspot.com"
+    "project_number": "85464432174",
+    "firebase_url": "https://likees-default-rtdb.firebaseio.com",
+    "project_id": "likees",
+    "storage_bucket": "likees.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:964561352695:android:0652c4cd2db165200160f2",
+        "mobilesdk_app_id": "1:85464432174:android:2819ae955f5efb395069bf",
         "android_client_info": {
-          "package_name": "com.hanif.tikfollow"
+          "package_name": "com.hanif.likeelikes"
         }
       },
       "oauth_client": [
         {
-          "client_id": "964561352695-6ss9f6idunk0drudq795t0nkijqf7str.apps.googleusercontent.com",
+          "client_id": "85464432174-3ajgsbdpstb5oe84s9dmdb9c26lirojm.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBdD0tZrVMKUrpeA-grgl0cea4GOTAfn7o"
+          "current_key": "AIzaSyAF5-r5RvMVUlrWFd9--axzVF_aZsVMdNw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "964561352695-6ss9f6idunk0drudq795t0nkijqf7str.apps.googleusercontent.com",
+              "client_id": "85464432174-3ajgsbdpstb5oe84s9dmdb9c26lirojm.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

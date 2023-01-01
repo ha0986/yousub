@@ -13,7 +13,7 @@
         android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/enter_your_tiktok_username"
+        android:text="@string/enter_your_Likee_username"
         android:textAlignment="center"
         android:textColor="#00FFFF"
         android:textSize="25sp"
@@ -44,7 +44,8 @@
             android:ems="10"
             android:hint="@string/type_here"
             android:inputType="textPersonName"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:autofillHints="" />
     </androidx.cardview.widget.CardView>
 
     <Button

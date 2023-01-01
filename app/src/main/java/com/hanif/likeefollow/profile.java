@@ -53,7 +53,7 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
         switch (v.getId()){
 
             case R.id.rate:
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.hanif.tikfollow"));
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.hanif.likeefollow"));
                 startActivity(browserIntent);
                 break;
             case R.id.edit:
@@ -82,8 +82,8 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
     public void exit(){
         new AlertDialog.Builder(this)
                 .setIcon(android.R.drawable.ic_dialog_alert)
-                .setTitle("Tikfollow")
-                .setMessage("Are you sure you want to close this activity?")
+                .setTitle("Likee Likes")
+                .setMessage("Are you sure you want to close this App?")
                 .setPositiveButton("Yes", (dialog, which) -> finish() )
                 .setNegativeButton("No", null)
                 .show();

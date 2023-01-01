@@ -149,7 +149,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
     public void loadAdd(){
         new android.app.AlertDialog.Builder(this)
                 .setIcon(android.R.drawable.ic_dialog_alert)
-                .setTitle("Tikfollow")
+                .setTitle("Likee Likes")
                 .setMessage("Watch add to claim this offer")
                 .setPositiveButton("OK", (dialog, which) ->claim())
                 .setNegativeButton("No", null)
@@ -179,7 +179,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
 
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Tikfollow");
+        builder.setTitle("Likee Likes");
         builder.setMessage("You will get your offer within a day. Please keep patience");
         AlertDialog alert = builder.create();
         alert.show();

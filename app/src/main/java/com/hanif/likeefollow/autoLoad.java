@@ -60,7 +60,7 @@ public class autoLoad {
 
     public static void alart(Context context, String text) {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Tikfollow");
+        builder.setTitle("Likee Likes");
         builder.setMessage(text);
         AlertDialog alert = builder.create();
         alert.show();
