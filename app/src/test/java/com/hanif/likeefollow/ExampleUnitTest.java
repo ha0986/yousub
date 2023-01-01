@@ -1,4 +1,4 @@
-package com.hanif.tikfollow;
+package com.hanif.likeefollow;
 
 import org.junit.Test;
 

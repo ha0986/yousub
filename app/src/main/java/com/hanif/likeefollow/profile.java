@@ -1,4 +1,4 @@
-package com.hanif.tikfollow;
+package com.hanif.likeefollow;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -28,7 +28,6 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
         Button reward = findViewById(R.id.reward);
         Button more = findViewById(R.id.more);
         Button exit = findViewById(R.id.exit);
-        Button bonus = findViewById(R.id.bonus);
         points = findViewById(R.id.points);
         TextView username = findViewById(R.id.userName);
 
@@ -39,7 +38,6 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
         reward.setOnClickListener(this);
         more.setOnClickListener(this);
         exit.setOnClickListener(this);
-        bonus.setOnClickListener(this);
 
         username.setText(autoLoad.userName);
         points.setText(autoLoad.points);
@@ -72,10 +70,6 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
                 break;
             case R.id.exit:
                 exit();
-                break;
-            case R.id.bonus:
-                myIntent = new Intent(profile.this,bonus.class);
-                startActivity(myIntent);
                 break;
             case R.id.more:
                 myIntent = new Intent(profile.this, more.class);

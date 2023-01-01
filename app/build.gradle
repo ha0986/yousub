@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'com.hanif.tikfollow'
+    namespace 'com.hanif.likeefollow'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.hanif.tikfollow"
+        applicationId "com.hanif.likeefollow"
         minSdk 21
         targetSdk 33
         versionCode 13
