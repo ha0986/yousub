@@ -69,7 +69,7 @@
         android:id="@+id/gp"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:backgroundTint="#D81B60"
+        android:backgroundTint="#5E35B1"
         android:text="@string/continue_as_guest"
         android:textColor="#000000"
         android:textSize="20sp"

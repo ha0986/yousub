@@ -8,6 +8,35 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:85464432174:android:f1df30739ff49adf5069bf",
+        "android_client_info": {
+          "package_name": "com.hanif.likeefollow"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "85464432174-3ajgsbdpstb5oe84s9dmdb9c26lirojm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAF5-r5RvMVUlrWFd9--axzVF_aZsVMdNw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "85464432174-3ajgsbdpstb5oe84s9dmdb9c26lirojm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:85464432174:android:2819ae955f5efb395069bf",
         "android_client_info": {
           "package_name": "com.hanif.likeelikes"

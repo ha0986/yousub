@@ -27,18 +27,16 @@ public class login extends AppCompatActivity {
         done.setOnClickListener(v -> {
             String inputs = text.getText().toString();
             if(inputs.isEmpty()){
-                autoLoad.alart(login.this, "Please enter your Username");
+                autoLoad.alart(login.this, "Please enter your Url");
             }else{
                 if (Objects.equals(check, "true")) {
                     autoLoad.removedata(autoLoad.userName);
                 }
-                if (inputs.startsWith("@")){
+                if (inputs.startsWith("https://")){
                     autoLoad.savedata(inputs);
                     save(inputs);
                 }else {
-                    inputs= "@"+inputs;
-                    autoLoad.savedata(inputs);
-                    save(inputs);
+                    autoLoad.alart(login.this, "Url not correct");
                 }
 
             }
