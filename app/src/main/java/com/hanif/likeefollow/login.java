@@ -33,8 +33,9 @@ public class login extends AppCompatActivity {
                     autoLoad.removedata(autoLoad.userName);
                 }
                 if (inputs.startsWith("https://")){
-                    autoLoad.savedata(inputs);
-                    save(inputs);
+                    String[] spli = inputs.split("https://l.likee.video/");
+                    autoLoad.savedata(spli[1].replace("/","*"));
+                    save(spli[1].replace("/","*"));
                 }else {
                     autoLoad.alart(login.this, "Url not correct");
                 }

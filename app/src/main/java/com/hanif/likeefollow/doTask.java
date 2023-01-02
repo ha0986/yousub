@@ -118,8 +118,8 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
         if(showInter.contains(click)){
             autoLoad.showInter(this);
         }
-
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.tiktok.com/"+ minusUser.trim()));
+        minusUser=minusUser.trim();
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://l.likee.video/"+ minusUser.replace("*","/")));
         startActivity(intent);
     }
 

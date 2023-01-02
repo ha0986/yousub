@@ -170,6 +170,7 @@ public class autoLoad {
             if (!task.isSuccessful()) {
                 Log.e("firebase", "Error getting data", task.getException());
             } else {
+                Log.d("username", userName);
                 points = String.valueOf(task.getResult().getValue());
                 doTask.userpoints.setText(points);
                 doTask.plusPoints = Integer.valueOf(points);
