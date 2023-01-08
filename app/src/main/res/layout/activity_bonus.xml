@@ -62,7 +62,7 @@
                 android:text="@string/claim"
                 android:textColor="#8E24AA"
                 android:textStyle="bold"
-                app:backgroundTint="#FFFFFF"
+                app:backgroundTint="#000000"
                 app:cornerRadius="60dp"
                 tools:ignore="DuplicateSpeakableTextCheck" />
 
@@ -129,7 +129,7 @@
                 android:text="@string/claim"
                 android:textColor="#8E24AA"
                 android:textStyle="bold"
-                app:backgroundTint="#FFFFFF"
+                app:backgroundTint="#000000"
                 app:cornerRadius="60dp" />
 
             <View
@@ -194,7 +194,7 @@
                 android:text="@string/claim"
                 android:textColor="#8E24AA"
                 android:textStyle="bold"
-                app:backgroundTint="#FFFFFF"
+                app:backgroundTint="#000000"
                 app:cornerRadius="60dp"
                 tools:ignore="DuplicateSpeakableTextCheck" />
 
@@ -262,7 +262,7 @@
                 android:text="@string/claim"
                 android:textColor="#8E24AA"
                 android:textStyle="bold"
-                app:backgroundTint="#FFFFFF"
+                app:backgroundTint="#000000"
                 app:cornerRadius="60dp" />
 
             <View
@@ -327,7 +327,7 @@
                 android:text="@string/claim"
                 android:textColor="#8E24AA"
                 android:textStyle="bold"
-                app:backgroundTint="#FFFFFF"
+                app:backgroundTint="#000000"
                 app:cornerRadius="60dp" />
 
             <View
@@ -392,7 +392,7 @@
                 android:text="@string/claim"
                 android:textColor="#8E24AA"
                 android:textStyle="bold"
-                app:backgroundTint="#FFFFFF"
+                app:backgroundTint="#000000"
                 app:cornerRadius="60dp" />
 
             <View
@@ -458,7 +458,7 @@
                 android:text="@string/claim"
                 android:textColor="#8E24AA"
                 android:textStyle="bold"
-                app:backgroundTint="#FFFFFF"
+                app:backgroundTint="#000000"
                 app:cornerRadius="60dp" />
 
             <View
@@ -535,10 +535,10 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/claim"
+                android:textColor="#8E24AA"
                 android:textStyle="bold"
-                app:backgroundTint="#FFFFFF"
-                app:cornerRadius="60dp"
-                android:textColor="#8E24AA" />
+                app:backgroundTint="#000000"
+                app:cornerRadius="60dp" />
 
             <View
                 android:id="@+id/divider19"

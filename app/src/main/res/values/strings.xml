@@ -28,4 +28,5 @@
     <string name="_15_likes">+15 likes</string>
     <string name="_10_likes">+10 likes</string>
     <string name="_5_likes">+ 5 likes</string>
+    <string name="claim_bonus">Claim Bonus</string>
 </resources>
