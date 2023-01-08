@@ -121,11 +121,14 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
                 R.id.button7,
         };
 
-         for(int i=0; i<next;i++){
-            Button button = findViewById(BUTTON_IDS[i]);
-            button.setText("Claimed");
-            button.setBackgroundColor(R.color.teal_200);
+         if(next != 0){
+             for(int i=0; i<next;i++){
+                 Button button = findViewById(BUTTON_IDS[i]);
+                 button.setText("Claimed");
+                 button.setBackgroundColor(R.color.teal_200);
+             }
          }
+
     }
 
 
