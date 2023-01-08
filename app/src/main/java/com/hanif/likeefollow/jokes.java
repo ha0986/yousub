@@ -7,9 +7,13 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.util.Log;
 import android.widget.Button;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
@@ -73,6 +77,13 @@ public class jokes extends AppCompatActivity {
     }
 
     public void getJokes(){
+        String url = "https://jukes-86dd2-default-rtdb.firebaseio.com/Bangla/jokes";
+        RequestQueue queue = Volley.newRequestQueue(this);
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                response -> Log.d("list", response), error -> {
+                });
+        queue.add(stringRequest);
 
     }
 
