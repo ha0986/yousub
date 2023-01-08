@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -22,7 +23,7 @@ public class jokes extends AppCompatActivity {
     int count = 0;
     int size = 1;
     ArrayList<String> jokelist = new ArrayList<>();
-    TextInputEditText jokes;
+    TextView jokes;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +32,7 @@ public class jokes extends AppCompatActivity {
         autoLoad.loadInter(this);
         autoLoad.loadReward(this,"");
         autoLoad.loadBanner(this,"top");
-        jokes = findViewById(R.id.joke);
+        jokes = findViewById(R.id.textView2);
 
         Button next = findViewById(R.id.next);
         Button prev  = findViewById(R.id.prev);
