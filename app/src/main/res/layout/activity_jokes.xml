@@ -58,19 +58,22 @@
         app:layout_constraintVertical_bias="0.929"
         app:rippleColor="#191C26" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="334dp"
-        android:layout_height="286dp"
-        android:text="@string/textview"
-        android:textAlignment="center"
-        android:textColor="#00FEFE"
-        android:textSize="25sp"
-        android:textStyle="bold"
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="330dp"
+        android:layout_height="280dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.543" />
+        app:layout_constraintTop_toTopOf="@+id/imageView4">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/joke"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="#00FFFFFF"
+            android:text="@string/loading_jokes"
+            android:textAlignment="center"
+            android:textColor="#00FEFE" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
