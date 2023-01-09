@@ -31,6 +31,7 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
         Button exit = findViewById(R.id.exit);
         points = findViewById(R.id.points);
         TextView username = findViewById(R.id.userName);
+        Button jokesBtn = findViewById(R.id.jokesbtn);
 
 
         rate.setOnClickListener(this);
@@ -43,7 +44,11 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
         username.setText(autoLoad.userName);
         points.setText(autoLoad.points);
 
-//        autoLoad.loadReward(this,"ca-app-pub-9422110628550448/3388878497");
+//      autoLoad.loadReward(this,"ca-app-pub-9422110628550448/3388878497");
+        jokesBtn.setOnClickListener(v -> {
+            myIntent = new Intent(profile.this, jokes.class);
+            startActivity(myIntent);
+        });
 
     }
 
