@@ -9,6 +9,7 @@ import android.os.Bundle;
 
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,7 +49,7 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
         Button back = findViewById(R.id.back);
         Button jokes = findViewById(R.id.jokes);
         Button follow = findViewById(R.id.follow);
-        Button bonus = findViewById(R.id.bonusbtn);
+        ImageButton bonus = findViewById(R.id.bonusbtn);
         userpoints = findViewById(R.id.taskpoint);
 
 

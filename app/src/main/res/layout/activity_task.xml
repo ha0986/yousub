@@ -116,22 +116,22 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.784" />
+        app:layout_constraintVertical_bias="0.227" />
 
-    <Button
+    <ImageButton
         android:id="@+id/bonusbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/claim_bonus"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        app:backgroundTint="#FFEB3B"
-        app:cornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        android:layout_width="128dp"
+        android:layout_height="120dp"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="@string/claim"
+        android:scaleX=".9"
+        android:scaleY=".9"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.891" />
+        app:layout_constraintVertical_bias="0.878"
+        app:srcCompat="@drawable/bonus" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

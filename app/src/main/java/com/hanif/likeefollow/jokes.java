@@ -1,15 +1,14 @@
 package com.hanif.likeefollow;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -17,11 +16,12 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class jokes extends AppCompatActivity {
     int count = 0;
     int size = 1;
-    ArrayList<String> jokelist = new ArrayList<>();
+    public ArrayList<Integer> showInter= new ArrayList<>(Arrays.asList(5,10,15,20,25,30,35));
     String[] joke;
     TextView jokes;
     @Override
@@ -30,7 +30,6 @@ public class jokes extends AppCompatActivity {
         setContentView(R.layout.activity_jokes);
 
         autoLoad.loadInter(this);
-        autoLoad.loadReward(this,"");
         autoLoad.loadBanner(this,"top");
         jokes = findViewById(R.id.textView2);
 
@@ -77,6 +76,9 @@ public class jokes extends AppCompatActivity {
 
     public void setJokes(){
         jokes.setText(joke[count]);
+        if(showInter.contains(count)){
+            autoLoad.showInter(this);
+        }
     }
 
     public void getJokes(){
@@ -89,9 +91,7 @@ public class jokes extends AppCompatActivity {
                         setJokes();
                         size= joke.length;
                         },
-                error -> {
-                    autoLoad.alart(this, "Check data connection");
-                });
+                error -> autoLoad.alart(this, "Check data connection"));
         queue.add(stringRequest);
 
     }

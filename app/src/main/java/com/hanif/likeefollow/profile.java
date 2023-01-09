@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -80,17 +81,29 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
     }
 
     public void exit(){
-        new AlertDialog.Builder(this)
-                .setIcon(android.R.drawable.ic_dialog_alert)
-                .setTitle("Likee Likes")
-                .setMessage("Are you sure you want to close this App?")
-                .setPositiveButton("Yes", (dialog, which) -> finish() )
-                .setNegativeButton("No", null)
-                .show();
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setIcon(R.mipmap.ic_launcher_round);
+        builder.setTitle("Likee Likes");
+        builder.setMessage("Do you really wanna Exit?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+        builder.create();
+        builder.show();
+
     }
 
     public void onBackPressed() {
-
+        exit();
     }
 
 

@@ -9,6 +9,21 @@
     android:textAlignment="center"
     tools:context=".login">
 
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="340dp"
+        android:layout_height="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.025"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_url="https://assets8.lottiefiles.com/packages/lf20_mu4y88.json" />
+
     <TextView
         android:id="@+id/textView4"
         android:layout_width="match_parent"
@@ -22,7 +37,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.166" />
+        app:layout_constraintVertical_bias="0.37" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
@@ -35,17 +50,17 @@
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.238">
+        app:layout_constraintVertical_bias="0.45999998">
 
         <EditText
             android:id="@+id/editTextTextPersonName3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:autofillHints=""
             android:ems="10"
             android:hint="@string/type_here"
             android:inputType="textPersonName"
-            android:textAlignment="center"
-            android:autofillHints="" />
+            android:textAlignment="center" />
     </androidx.cardview.widget.CardView>
 
     <Button
@@ -63,7 +78,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.342" />
+        app:layout_constraintVertical_bias="0.559" />
 
     <Button
         android:id="@+id/gp"

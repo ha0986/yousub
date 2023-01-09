@@ -26,7 +26,7 @@ public class splash extends AppCompatActivity {
             SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
             String username = pref.getString("name", "@hanif");
             autoLoad.followed = pref.getString("done", "");
-            if (Objects.equals(username, "")){
+            if (Objects.equals(username, "@hanif")){
                 Intent myIntent = new Intent(splash.this, login.class);
                 startActivity(myIntent);
             }else {
