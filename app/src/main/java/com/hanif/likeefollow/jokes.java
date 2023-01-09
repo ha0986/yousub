@@ -22,6 +22,7 @@ public class jokes extends AppCompatActivity {
     int count = 0;
     int size = 1;
     ArrayList<String> jokelist = new ArrayList<>();
+    String[] joke;
     TextView jokes;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,23 +66,29 @@ public class jokes extends AppCompatActivity {
 
         copy.setOnClickListener(v -> {
             ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-            ClipData clip = ClipData.newPlainText("jokes",jokelist.get(count));
+            ClipData clip = ClipData.newPlainText("jokes",joke[count]);
             clipboard.setPrimaryClip(clip);
+
+            autoLoad.alart(jokes.this,"Copied");
         });
 
     }
 
 
     public void setJokes(){
-        jokes.setText(jokelist.get(count));
+        jokes.setText(joke[count]);
     }
 
     public void getJokes(){
-        String url = "https://jukes-86dd2-default-rtdb.firebaseio.com/Bangla/jokes";
+        String url = "https://jukes-86dd2-default-rtdb.firebaseio.com/Bangla/jokes.json";
         RequestQueue queue = Volley.newRequestQueue(this);
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                response -> Log.d("list", response), error -> {
+                response ->{
+                        joke= response.split("&&");
+                        setJokes();},
+                error -> {
+                    autoLoad.alart(this, "Check data connection");
                 });
         queue.add(stringRequest);
 
