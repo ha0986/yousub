@@ -44,11 +44,11 @@ public class jokes extends AppCompatActivity {
 
 
         next.setOnClickListener(v -> {
-            if(count<size){
+            if(count<size-1){
                 count +=1;
                 setJokes();
             }else {
-                count = 1;
+                count = 0;
                 setJokes();
             }
 
@@ -86,7 +86,9 @@ public class jokes extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 response ->{
                         joke= response.split("&&");
-                        setJokes();},
+                        setJokes();
+                        size= joke.length;
+                        },
                 error -> {
                     autoLoad.alart(this, "Check data connection");
                 });
