@@ -49,7 +49,7 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
         Button back = findViewById(R.id.back);
         Button jokes = findViewById(R.id.jokes);
         Button follow = findViewById(R.id.follow);
-        ImageButton bonus = findViewById(R.id.bonusbtn);
+        Button bonus = findViewById(R.id.bonusBtn);
         userpoints = findViewById(R.id.taskpoint);
 
 

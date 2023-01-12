@@ -86,24 +86,16 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
     }
 
     public void exit(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setIcon(R.mipmap.ic_launcher_round);
-        builder.setTitle("Likee Likes");
-        builder.setMessage("Do you really wanna Exit?")
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        finish();
-                    }
+        new AlertDialog.Builder(profile.this)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .setTitle("Likee Likes")
+                .setMessage("Are you sure you want to Exit?")
+                .setPositiveButton("Yes", (dialog, which) -> {
+                    moveTaskToBack(true);
+                    finish();
                 })
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-        builder.create();
-        builder.show();
+                .setNegativeButton("No", null)
+                .show();
 
     }
 
