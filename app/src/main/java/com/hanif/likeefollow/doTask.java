@@ -9,13 +9,10 @@ import android.os.Bundle;
 
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.tasks.Task;
 import com.google.android.play.core.appupdate.AppUpdateInfo;
@@ -88,7 +85,7 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
                 myIntent = new Intent(doTask.this, jokes.class);
                 startActivity(myIntent);
                 break;
-            case  R.id.bonusbtn:
+            case  R.id.bonusBtn:
                 myIntent = new Intent(doTask.this, bonus.class);
                 startActivity(myIntent);
                 break;
