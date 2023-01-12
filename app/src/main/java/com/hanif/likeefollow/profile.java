@@ -44,7 +44,7 @@ public class profile extends AppCompatActivity implements View.OnClickListener {
         username.setText(autoLoad.userName);
         points.setText(autoLoad.points);
 
-//      autoLoad.loadReward(this,"ca-app-pub-9422110628550448/3388878497");
+        autoLoad.loadReward(this,"ca-app-pub-9422110628550448/5693330404");
         jokesBtn.setOnClickListener(v -> {
             myIntent = new Intent(profile.this, jokes.class);
             startActivity(myIntent);
