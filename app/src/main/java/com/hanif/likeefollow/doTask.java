@@ -13,6 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.tasks.Task;
 import com.google.android.play.core.appupdate.AppUpdateInfo;
@@ -63,11 +65,11 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
         autoLoad.checkNetwork(this);
         autoLoad.loadInter(this);
         autoLoad.loadReward(this,"ca-app-pub-9422110628550448/1122651035");
-        autoLoad.loadBanner(doTask.this,"top");
 
-//        mAdView = findViewById(R.id.adView);
-//        AdRequest adRequest = new AdRequest.Builder().build();
- //       mAdView.loadAd(adRequest);
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
 
         appUpdateManager = AppUpdateManagerFactory.create(getApplicationContext());

@@ -193,7 +193,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
 
     public void onBackPressed() {
         autoLoad.showInter(this);
-        Intent myIntent = new Intent(bonus.this, profile.class);
+        Intent myIntent = new Intent(bonus.this,doTask.class);
         startActivity(myIntent);
     }
 

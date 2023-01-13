@@ -5,6 +5,7 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -14,11 +15,14 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class jokes extends AppCompatActivity {
+    private AdView mAdView;
     int count = 0;
     int size = 1;
     public ArrayList<Integer> showInter= new ArrayList<>(Arrays.asList(5,10,15,20,25,30,35));
@@ -39,7 +43,9 @@ public class jokes extends AppCompatActivity {
 
 
         getJokes();
-
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         next.setOnClickListener(v -> {
             if(count<size-1){
