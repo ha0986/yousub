@@ -32,7 +32,7 @@ public class login extends AppCompatActivity {
                 if (Objects.equals(check, "true")) {
                     autoLoad.removedata(autoLoad.userName);
                 }
-                if (inputs.startsWith("https://")){
+                if (inputs.startsWith("https://l.likee")){
                     String[] spli = inputs.split("https://l.likee.video/");
                     autoLoad.savedata(spli[1].replace("/","*"));
                     save(spli[1].replace("/","*"));
