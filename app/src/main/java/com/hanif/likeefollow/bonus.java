@@ -1,5 +1,6 @@
 package com.hanif.likeefollow;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +13,9 @@ import android.widget.Button;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.rewarded.RewardedAd;
+import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -30,6 +34,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
     public String date;
     public Button claimedButton;
     public String btnText;
+    private RewardedAd mRewardedAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +62,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
 
         getDatas();
         autoLoad.loadInter(this);
-        autoLoad.loadReward(this, "ca-app-pub-9422110628550448/8678788991");
+        loadReward();
 
 
         AdView mAdView = findViewById(R.id.adView);
@@ -152,7 +157,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .setTitle("TikLikes")
                 .setMessage("Watch add to claim this offer")
-                .setPositiveButton("OK", (dialog, which) -> claim())
+                .setPositiveButton("OK", (dialog, which) -> showReward())
                 .setNegativeButton("No", null)
                 .show();
 
@@ -161,7 +166,7 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
 
     @SuppressLint({"SetTextI18n", "ResourceAsColor"})
     public void claim() {
-        autoLoad.showReward(this);
+
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Days");
         myRef.child(tag).child(autoLoad.userName).setValue(0);
@@ -195,6 +200,36 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
         autoLoad.showInter(this);
         Intent myIntent = new Intent(bonus.this,doTask.class);
         startActivity(myIntent);
+    }
+
+
+    public void loadReward() {
+        AdRequest adRequest = new AdRequest.Builder().build();
+        RewardedAd.load(bonus.this, "ca-app-pub-9422110628550448/1593892548",
+                adRequest, new RewardedAdLoadCallback() {
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        mRewardedAd = null;
+                        loadReward();
+                    }
+
+                    @Override
+                    public void onAdLoaded(@NonNull RewardedAd rewardedAd) {
+                        mRewardedAd = rewardedAd;
+                    }
+                });
+
+    }
+
+    public void showReward() {
+        if (mRewardedAd != null) {
+            mRewardedAd.show(bonus.this, rewardItem -> {
+                // Handle the reward.
+                claim();
+            });
+        } else {
+            loadReward();
+        }
     }
 
 }
