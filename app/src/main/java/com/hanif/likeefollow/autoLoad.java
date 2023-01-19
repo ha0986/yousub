@@ -148,11 +148,7 @@ public class autoLoad {
                 // Handle the reward.
                 int rewardAmount = rewardItem.getAmount();
                 points = String.valueOf(Integer.parseInt(points) + rewardAmount);
-                if (rewardAmount == 10) {
-                    doTask.userpoints.setText(points);
-                } else if (rewardAmount == 300) {
-                    profile.points.setText(points);
-                }
+                profile.points.setText(points);
                 String rewardType = rewardItem.getType();
             });
         } else {
