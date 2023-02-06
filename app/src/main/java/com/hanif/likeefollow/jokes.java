@@ -70,8 +70,11 @@ public class jokes extends AppCompatActivity {
 
         copy.setOnClickListener(v -> {
             ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-            ClipData clip = ClipData.newPlainText("jokes",joke[count]);
-            clipboard.setPrimaryClip(clip);
+            if (joke != null){
+                ClipData clip = ClipData.newPlainText("jokes",joke[count]);
+                clipboard.setPrimaryClip(clip);
+            }
+
 
             autoLoad.alart(jokes.this,"Copied");
         });
@@ -80,7 +83,10 @@ public class jokes extends AppCompatActivity {
 
 
     public void setJokes(){
-        jokes.setText(joke[count]);
+        if (joke!= null){
+            jokes.setText(joke[count]);
+        }
+
         if(showInter.contains(count)){
             autoLoad.showInter(this);
         }

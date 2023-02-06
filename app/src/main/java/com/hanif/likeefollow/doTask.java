@@ -54,6 +54,8 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
         Button jokes = findViewById(R.id.jokes);
         Button follow = findViewById(R.id.follow);
         Button bonus = findViewById(R.id.bonusBtn);
+        Button rate = findViewById(R.id.rates);
+        Button proof = findViewById(R.id.proof2);
         userpoints = findViewById(R.id.taskpoint);
 
 
@@ -99,6 +101,14 @@ public class doTask extends AppCompatActivity implements View.OnClickListener {
             case R.id.back:
                 myIntent = new Intent(doTask.this, profile.class);
                 startActivity(myIntent);
+                break;
+            case R.id.proof2:
+                myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://youtube.com/shorts/Ya74m-RaCZM?feature=share"));
+                startActivity(myIntent);
+                break;
+            case R.id.rates:
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.hanif.likeefollow"));
+                startActivity(browserIntent);
                 break;
             case R.id.follow:
                 startTask();

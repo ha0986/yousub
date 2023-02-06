@@ -192,7 +192,8 @@ public class bonus extends AppCompatActivity implements View.OnClickListener {
         claimedButton.setText("claimed");
         claimedButton.setBackgroundColor(R.color.teal_200);
 
-
+        Intent myIntent = new Intent(bonus.this,doTask.class);
+        startActivity(myIntent);
     }
 
 
