@@ -44,7 +44,7 @@ public class autoLoad {
     public static FirebaseDatabase database = FirebaseDatabase.getInstance();
     public static ArrayList<String> nameList = new ArrayList<>();
     public static ArrayList<String> follow = new ArrayList<>();
-    public static String followed;
+    public static String followed= "@hanif, @jakir";
 
 
 
