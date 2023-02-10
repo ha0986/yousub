@@ -44,6 +44,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="#00E3FF"
                 android:text="@string/_25_likes"
+                android:textAllCaps="false"
                 android:textColor="#000000"
                 android:textStyle="bold"
                 app:cornerRadius="20dp" />
@@ -111,6 +112,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="#00E3FF"
                 android:text="@string/_20_likes"
+                android:textAllCaps="false"
                 android:textColor="#000000"
                 android:textStyle="bold"
                 app:cornerRadius="20dp" />
@@ -176,6 +178,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="#00E3FF"
                 android:text="@string/_15_likes"
+                android:textAllCaps="false"
                 android:textColor="#000000"
                 android:textStyle="bold"
                 app:cornerRadius="20dp" />
@@ -243,6 +246,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="#00E3FF"
                 android:text="@string/_1_follow"
+                android:textAllCaps="false"
                 android:textColor="#000000"
                 android:textStyle="bold"
                 app:cornerRadius="20dp"
@@ -310,6 +314,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="#00E3FF"
                 android:text="@string/_10_likes"
+                android:textAllCaps="false"
                 android:textColor="#000000"
                 android:textStyle="bold"
                 app:cornerRadius="20dp" />
@@ -375,6 +380,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="#00E3FF"
                 android:text="@string/_1_follow"
+                android:textAllCaps="false"
                 android:textColor="#000000"
                 android:textStyle="bold"
                 app:cornerRadius="20dp" />
@@ -441,6 +447,7 @@
                 android:layout_weight="1"
                 android:backgroundTint="#00E3FF"
                 android:text="@string/_5_likes"
+                android:textAllCaps="false"
                 android:textColor="#000000"
                 android:textStyle="bold"
                 app:cornerRadius="20dp" />
@@ -519,6 +526,7 @@
                 android:backgroundTint="#00E3FF"
                 android:text="@string/_1_follow"
                 android:textAlignment="center"
+                android:textAllCaps="false"
                 android:textColor="#000000"
                 android:textStyle="bold"
                 app:cornerRadius="20dp"
