@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.hanif.likeefollow">
+    package="com.hanif.gdele">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
@@ -16,7 +16,7 @@
         android:theme="@style/Theme.Tikfollow"
         tools:targetApi="31">
         <activity
-            android:name=".splash"
+            android:name="com.hanif.gdele.splash"
             android:theme="@style/CustomSplashTheme"
             android:exported="true">
             <intent-filter>
@@ -30,42 +30,42 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".profile"
+            android:name="com.hanif.gdele.profile"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".login"
+            android:name="com.hanif.gdele.login"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".doTask"
+            android:name="com.hanif.gdele.doTask"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".more"
+            android:name="com.hanif.gdele.more"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".bonus"
+            android:name="com.hanif.gdele.bonus"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".jokes"
+            android:name="com.hanif.gdele.jokes"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

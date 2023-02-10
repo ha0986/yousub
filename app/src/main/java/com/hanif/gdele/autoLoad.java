@@ -1,4 +1,4 @@
-package com.hanif.likeefollow;
+package com.hanif.gdele;
 
 
 
@@ -31,8 +31,6 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Objects;
-
 
 
 public class autoLoad {

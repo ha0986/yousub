@@ -1,4 +1,4 @@
-package com.hanif.likeefollow;
+package com.hanif.gdele;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;

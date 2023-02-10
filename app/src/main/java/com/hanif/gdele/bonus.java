@@ -1,4 +1,4 @@
-package com.hanif.likeefollow;
+package com.hanif.gdele;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
